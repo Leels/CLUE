@@ -8,14 +8,12 @@ const colorToName = {
 }
 
 export class Suspect {
-    constructor(color, knowledge, isPlayer) {
-        color = color.toLowerCase();
-
+    constructor(color, knowledge, isPlayer, location) {
         this.color = color;
         this.name = colorToName[color];
         this.knowledge = knowledge;
         this.isPlayer = isPlayer;
-        this.location = null;
+        this.location = location;
     }
 
     moveTo(newRoom) {
