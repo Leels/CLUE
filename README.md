@@ -1,11 +1,12 @@
-# Title
-## Author
+# CLUE
+## By Alyssa Colistro, Jaime Gensler, Jonathan Salfen, Lela Smith
 
 ### Description
 #### This website will...:
 
+### Specs
 
-## GitHub Pages link
+### GitHub Pages link
 
   [Visit (site))](link)
 
