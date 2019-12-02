@@ -20,10 +20,17 @@ export class Game {
 
     initSuspects(playerColor) {
         let colors = ['white', 'blue', 'green', 'purple', 'yellow', 'red'];
+        let locations = this.rooms.map((x) => x);
         for (let i = 0; i <=6; i++) {
             const randomColor = getRandomFrom(colors);
-            this.suspects.push(new Suspect(randomColor.value, [], (randomColor.value === playerColor)));
+            const randomLoc = getRandomFrom(locations);
+
+            this.suspects.push(
+                new Suspect(randomColor.value, [], (randomColor.value === playerColor), randomLoc.value)
+            );
+
             colors.splice(randomColor.index, 1);
+            locations.splice(randomLoc.index, 1);
         }
     }
 
