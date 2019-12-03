@@ -1,36 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
+  <meta charset="utf-8">
   <title>Clue</title>
 </head>
 <body>
   <div class="container">
-    <div id="intro-page">
-      <button type="button">Start Game!</button>
-    </div>
-    <div id="choose-char">
+
+    <div id="intro">
+      <h1>Clue</h1>
+      <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
       <div class="form-group">
+        <h4>Choose a player:</h4>
         <div class="radio">
-          <input type="radio" name="character" value="mrs-white">
+          <label for="mrs-white">Mrs. White</label>
+          <input id="mrs-white" type="radio" name="character" value="mrs-white">
         </div>
         <div class="radio">
-          <input type="radio" name="character" value="mrs-peacock">
+          <label for="mrs-peacock">Mrs. Peacock</label>
+          <input id="mrs-peacock" type="radio" name="character" value="mrs-peacock">
         </div>
         <div class="radio">
-          <input type="radio" name="character" value="mr-green">
+          <label for="mr-green">Mr. Green</label>
+          <input id="mr-green" type="radio" name="character" value="mr-green">
         </div>
         <div class="radio">
-          <input type="radio" name="character" value="prof-plum">
+          <label for="prof-plum">Professor Plum</label>
+          <input id="prof-plum" type="radio" name="character" value="prof-plum">
         </div>
         <div class="radio">
-          <input type="radio" name="character" value="col-mustard">
+          <label for="col-mustard">Colonel Mustard</label>
+          <input id="col-mustard" type="radio" name="character" value="col-mustard">
         </div>
         <div class="radio">
-          <input type="radio" name="character" value="ms-scarlet">
+          <label for="ms-scarlet">Miss Scarlet</label>
+          <input id="ms-scarlet" type="radio" name="character" value="ms-scarlet">
         </div>
+        <button type="button" id="selectChar" name="choose-char-btn">Select Character</button>
       </div>
-          <button type="button" id="selectChar" name="choose-char-btn">Select Character</button>
+    </div>
+
+    <div id="rules">
+      <h2>The Rules of Clue:</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div id="player-clues">
+      <h2>Your Initial Clues:</h2>
+      <div id="player-clues-deck" class="container">
+        <!-- The code between this comment and the one below is just an example of how this will look.  The below HTML should be populated for each player card via javascript-->
+        <div id="card1" class="card" style="width: 18rem;">
+          <img src="https://cdn.webshopapp.com/shops/263124/files/235199599/image.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
         </div>
+        <div id="card2" class="card" style="width: 18rem;">
+          <img src="https://cdn.webshopapp.com/shops/263124/files/235199599/image.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+        <div id="card3" class="card" style="width: 18rem;">
+          <img src="https://cdn.webshopapp.com/shops/263124/files/235199599/image.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+        <!--  -->
       </div>
-    </body>
-    </html>
+
+
+    </div>
+
+    <div id="game-board">
+
+    </div>
+
+    <div id="accusation">
+
+    </div>
+
+    <div id="final">
+
+    </div>
+  </div>
+</body>
+</html>
