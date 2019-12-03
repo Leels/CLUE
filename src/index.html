@@ -71,16 +71,31 @@
         </div>
         <!--  -->
       </div>
-
-
     </div>
 
-    <div id="game-board">
+    <div id="gameboard">
+      <h2>Clue</h2>
+      <div id="gameboard-top">
+        <div id="current-room">
 
+        </div>
+        <div id="message-board">
+
+        </div>
+      </div>
+      <div class="gameboard-bottom">
+        <button class="rules-button" type="button" name="button">Rules</button>
+        <button class="view-player-clues-button" type="button" name="button">Your Clues</button>
+        <button class="make-accusation-button" type="button" name="button">Make Accusation</button>
+        <button class="talk-to-button" type="button" name="button">Talk to Soandso</button>
+        <!-- The talk-to-button content should be populated via javascript upon eacn gameboard  -->
+      </div>
     </div>
 
     <div id="accusation">
-
+      <h1 id="you-win-lose">You Win!</h1>
+      <h3 id="game-outcome">You guessed Mr Peacock killed him in the billards room with the rope.<br><br>Congradulations!</h3>
+      <button class="play-again-button"type="button" name="button">Play Clue Again</button>
     </div>
 
     <div id="final">
