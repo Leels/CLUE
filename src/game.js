@@ -7,7 +7,7 @@ function getRandomFrom(array) {
 
 export class Game {
     constructor(playerChar) {
-        this.players = [];
+        this.suspects = [];
         this.caseFile = [];
         this.turnNumber = 0;
 
@@ -31,7 +31,7 @@ export class Game {
         const turns = [1, 2, 3, 4, 5, 6];
         const murderer = this.caseFile[0];
 
-        gameVars.suspects.forEach((suspect) => {
+        gameVars.guests.forEach((guest) => {
             const randTurn = getRandomFrom(turns);
             turns.splice(turns.indexOf(randTurn), 1);
             const knowledge = [];
@@ -40,12 +40,12 @@ export class Game {
                 cards.splice(cards.indexOf(card), 1);
                 knowledge.push(card);
             }
-            this.players.push(
+            this.suspects.push(
                 new Suspect(
-                    suspect,
+                    guest,
                     knowledge,
-                    suspect === playerChar,
-                    suspect === murderer,
+                    guest === playerChar,
+                    guest === murderer,
                     randTurn
                 )
             );
