@@ -33,10 +33,6 @@ export class Game {
             cards.splice(0, 3);
         }, this); //THE 'THIS' PARAM SHOULD MAKE 'THIS' CONTEXT FIXED IN LOOP
     }
-
-    accuse(murderer, murderWeapon, murderLocation) {
-        return (this.caseFile[0] === murderer && this.caseFile[1] === murderWeapon && this.caseFile[2] === murderLocation);
-    }
 }
 
 function getRandomFrom(array) {
