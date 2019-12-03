@@ -1,11 +1,11 @@
-import { Suspect } from './suspect.js';
+// import { Suspect } from './suspect.js';
 
 function getRandomFrom(array) {
     const index = Math.floor(array.length * Math.random());
     return ({value: array[index], index: index});
 }
 
-export class Game {
+ class Game {
     constructor(playerColor) {
         this.state = 'active';
         this.rooms = ['Study', 'Library', 'Lounge', 'Game Room', 'Hall', 'Dining Room', 'Conservatory', 'Ballroom', 'Kitchen'];
@@ -34,7 +34,7 @@ export class Game {
             }
 
             this.suspects.push(
-                new Suspect(randomColor.value, randomClues, (randomColor.value === playerColor), randomLoc.value)
+                new Suspect(randomColor.value, randomClues, (randomColor.value === playerColor), this.caseFile.includes(randomColor.value), randomLoc.value)
             );
 
             colors.splice(randomColor.index, 1);
@@ -56,5 +56,9 @@ export class Game {
         const murderLocation = getRandomFrom(this.rooms);
         this.caseFile.push(murderLocation.value);
         this.clues.splice(this.clues.indexOf(murderLocation.value), 1);
+    }
+
+    accuse(murderer, murderWeapon, murderLocation) {
+        return (this.caseFile[0] === murderer && this.caseFile[1] === murderWeapon && this.caseFile[2] === murderLocation);
     }
 }

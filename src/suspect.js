@@ -8,11 +8,12 @@ const colorToName = {
 }
 
 export class Suspect {
-    constructor(color, knowledge, isPlayer, location) {
+    constructor(color, knowledge, isPlayer, isMurderer, location) {
         this.color = color;
         this.name = colorToName[color];
         this.knowledge = knowledge;
         this.isPlayer = isPlayer;
+        this.isMurderer = isMurderer;
         this.location = location;
     }
 
