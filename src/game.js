@@ -1,10 +1,6 @@
 import { Suspect } from './suspect.js';
 import { gameVars } from './suspect.js';
 
-function getRandomFrom(array) {
-    return array[Math.floor(Math.random() * array.length)];
-}
-
 export class Game {
     constructor(playerChar) {
         this.suspects = [];
@@ -19,37 +15,40 @@ export class Game {
         for (const varType in gameVars) {
             const randCard = getRandomFrom(gameVars[varType]);
             this.caseFile.push(randCard);
-            cards.splice(indexOf(randCard), 1);
+            cards.splice(cards.indexOf(randCard), 1);
         }
-        return cards;
+        return shuffleArray(cards);
     }
 
     initSuspects(playerChar, cards) {
-        const turns = [1, 2, 3, 4, 5, 6];
-        const murderer = this.caseFile[0];
-
-        gameVars.guests.forEach((guest) => {
-            const randTurn = getRandomFrom(turns);
-            turns.splice(turns.indexOf(randTurn), 1);
-            const knowledge = [];
-            for (let j = 0; j < 3; j++) {
-                const card = getRandomFrom(cards);
-                cards.splice(cards.indexOf(card), 1);
-                knowledge.push(card);
-            }
+        shuffleArray(gameVars.guests).forEach((guest) => {
             this.suspects.push(
                 new Suspect(
                     guest,
-                    knowledge,
+                    [cards[0], cards[1], cards[2]],
                     guest === playerChar,
-                    guest === murderer,
-                    randTurn
+                    guest === this.caseFile[0]
                 )
             );
+            cards.splice(0, 3);
         }, this); //THE 'THIS' PARAM SHOULD MAKE 'THIS' CONTEXT FIXED IN LOOP
     }
 
     accuse(murderer, murderWeapon, murderLocation) {
         return (this.caseFile[0] === murderer && this.caseFile[1] === murderWeapon && this.caseFile[2] === murderLocation);
     }
+}
+
+function getRandomFrom(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+function shuffleArray(array) { //taken from Medium
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * i);
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
 }
