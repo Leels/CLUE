@@ -1,0 +1,64 @@
+/* global style */
+
+body {
+  background-color: #f2f3f7;
+}
+button, select, h1, .radio {
+  background-color: white;
+}
+
+button, select {
+  border: solid 1px black;
+  box-shadow: 3px 5px;
+  margin: 10px;
+}
+
+h1, h2 {
+  font-family: 'Righteous', cursive;
+}
+
+h1, h2, h3, h4, h5 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 130px;
+  border: solid 3px black;
+  box-shadow: 7px 15px;
+  margin: 50px;
+}
+
+.center-div {
+  /* margin: 0 auto;
+  display: block; */
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 30px;
+  text-align: left;
+  justify-items: center;
+}
+
+.radio {
+  border: solid;
+  padding-left: 10px;
+  padding-top: 5px;
+  width: 170px;
+}
+
+/* .radio> input {
+  border: 0px;
+    width: 1em;
+    height: 20px;
+  float: right;
+}
+
+.radio> label {
+
+  float: left;
+  height: 20px;
+
+} */
