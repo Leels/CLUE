@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bowlby+One+SC|Calistoga|Patua+One|Righteous&display=swap" rel="stylesheet">
   <title>Clue</title>
 </head>
 <body>
@@ -13,31 +14,36 @@
       <div class="form-group">
         <form id="initial-form">
           <h4>Choose a player:</h4>
-          <div class="radio">
-            <label for="mrs-white">Mrs. White</label>
-            <input id="mrs-white" type="radio" name="character" value="mrs-white">
+          <div class="grid">
+            <div class="radio">
+              <input id="mrs-white" type="radio" name="character" value="mrs-white">
+              <label for="mrs-white">Mrs. White</label>
+            </div>
+            <div class="radio">
+              <input id="mrs-peacock" type="radio" name="character" value="mrs-peacock">
+              <label for="mrs-peacock">Mrs. Peacock</label>
+            </div>
+            <div class="radio">
+              <input id="mr-green" type="radio" name="character" value="mr-green">
+              <label for="mr-green">Mr. Green</label>
+            </div>
+            <div class="radio">
+              <input id="prof-plum" type="radio" name="character" value="prof-plum">
+              <label for="prof-plum">Professor Plum</label>
+            </div>
+            <div class="radio">
+              <input id="col-mustard" type="radio" name="character" value="col-mustard">
+              <label for="col-mustard">Colonel Mustard</label>
+            </div>
+            <div class="radio">
+              <input id="ms-scarlet" type="radio" name="character" value="ms-scarlet">
+              <label for="ms-scarlet">Miss Scarlet</label>
+            </div>
+
           </div>
-          <div class="radio">
-            <label for="mrs-peacock">Mrs. Peacock</label>
-            <input id="mrs-peacock" type="radio" name="character" value="mrs-peacock">
+          <div class="center-div">
+            <button type="button" id="start-game">Select Character and Start Game</button>
           </div>
-          <div class="radio">
-            <label for="mr-green">Mr. Green</label>
-            <input id="mr-green" type="radio" name="character" value="mr-green">
-          </div>
-          <div class="radio">
-            <label for="prof-plum">Professor Plum</label>
-            <input id="prof-plum" type="radio" name="character" value="prof-plum">
-          </div>
-          <div class="radio">
-            <label for="col-mustard">Colonel Mustard</label>
-            <input id="col-mustard" type="radio" name="character" value="col-mustard">
-          </div>
-          <div class="radio">
-            <label for="ms-scarlet">Miss Scarlet</label>
-            <input id="ms-scarlet" type="radio" name="character" value="ms-scarlet">
-          </div>
-          <button type="button" id="start-game">Select Character and Start Game</button>
         </form>
       </div>
     </div>
@@ -47,11 +53,13 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <button class="back-to-gameboard" type="button">Proceed to Game</button>
+      <div class="center-div">
+        <button class="back-to-gameboard" type="button">Proceed to Game</button>
+      </div>
     </div>
 
     <div id="player-clues">
-      <h2>Your Initial Clues:</h2>
+      <h2>Your Clues:</h2>
       <div id="player-clues-deck" class="container">
         <!-- The code between this comment and the one below is just an example of how this will look.  The below HTML should be populated for each player card via javascript UNLESS an image of origonal cards is used, in which case we will simply populate an empty div with a class, id, and style to reflect image dimensions-->
 
@@ -74,12 +82,13 @@
           </div>
         </div>
         <!--  -->
-        <button class="back-to-gameboard" type="button">Proceed to Game</button>
+        <div class="center-div">
+          <button class="back-to-gameboard" type="button">Proceed to Game</button>
+        </div>
       </div>
     </div>
 
     <div id="gameboard">
-      <h2>Clue</h2>
       <div id="gameboard-top">
         <div id="current-room">
           <!-- Content added dynamically with js -->
@@ -89,11 +98,13 @@
         </div>
       </div>
       <div class="gameboard-bottom">
-        <button class="rules-button" type="button" name="button">Rules</button>
-        <button class="view-player-clues-button" type="button" name="button">Your Clues</button>
-        <button class="make-accusation-button" type="button" name="button">Make Accusation</button>
-        <button class="talk-to-button" type="button" name="button">Talk to Soandso</button>
-        <!-- The talk-to-button content should be populated via javascript upon eacn gameboard  -->
+        <div class="center-div">
+          <button class="rules-button" type="button" name="button">Rules</button>
+          <button class="view-player-clues-button" type="button" name="button">Your Clues</button>
+          <button class="make-accusation-button" type="button" name="button">Make Accusation</button>
+          <button class="talk-to-button" type="button" name="button">Talk to Soandso</button>
+          <!-- The talk-to-button content should be populated via javascript upon eacn gameboard  -->
+        </div>
       </div>
     </div>
 
@@ -101,47 +112,53 @@
       <h2>Make an Accusation</h2>
       <h5>WARNING: Be sure of your accusation!  If you are incorrect, you will lose the game.</h5>
       <form id="accusation-form">
-        <select name="suspect">
-          <option selected="selected">Suspect</option>
-          <option value="white">Mrs. White</option>
-          <option value="blue">Mrs. Peacock</option>
-          <option value="green">Mr. Green</option>
-          <option value="purple">Professor Plum</option>
-          <option value="yellow">Colonel Mustard</option>
-          <option value="red">Miss Scarlet</option>
-        </select>
-        <select name="weapon">
-          <option selected="selected">Weapon</option>
-          <option value="revolver">Revolver</option>
-          <option value="rope">Rope</option>
-          <option value="lead pipe">Lead Pipe</option>
-          <option value="knife">Knife</option>
-          <option value="candlestick">Candlestick</option>
-          <option value="wrench">Wrench</option>
-        </select>
-        <select name="location">
-          <option selected="selected">Location</option>
-          <option value="study">Study</option>
-          <option value="library">Library</option>
-          <option value="lounge">Lounge</option>
-          <option value="game room">Game Room</option>
-          <option value="hall">Hall</option>
-          <option value="dining room">Dining Room</option>
-          <option value="conservatory">Conservatory</option>
-          <option value="ballroom">Ballroom</option>
-          <option value="kitchen">Kitchen</option>
-        </select>
-        <button id="submit-accusation" type="button">Submit Accusation</button>
-        <button class="back-to-gameboard" type="button">Back to Game</button>
+        <div class="center-div">
+          <select name="suspect">
+            <option selected="selected">Suspect</option>
+            <option value="white">Mrs. White</option>
+            <option value="blue">Mrs. Peacock</option>
+            <option value="green">Mr. Green</option>
+            <option value="purple">Professor Plum</option>
+            <option value="yellow">Colonel Mustard</option>
+            <option value="red">Miss Scarlet</option>
+          </select>
+          <select name="weapon">
+            <option selected="selected">Weapon</option>
+            <option value="revolver">Revolver</option>
+            <option value="rope">Rope</option>
+            <option value="lead pipe">Lead Pipe</option>
+            <option value="knife">Knife</option>
+            <option value="candlestick">Candlestick</option>
+            <option value="wrench">Wrench</option>
+          </select>
+          <select name="location">
+            <option selected="selected">Location</option>
+            <option value="study">Study</option>
+            <option value="library">Library</option>
+            <option value="lounge">Lounge</option>
+            <option value="game room">Game Room</option>
+            <option value="hall">Hall</option>
+            <option value="dining room">Dining Room</option>
+            <option value="conservatory">Conservatory</option>
+            <option value="ballroom">Ballroom</option>
+            <option value="kitchen">Kitchen</option>
+          </select>
+        </div>
+        <div class="center-div">
+          <button id="submit-accusation" type="button">Submit Accusation</button>
+          <button class="back-to-gameboard" type="button">Back to Game</button>
+        </div>
       </form>
 
     </div>
 
     <div id="final">
       <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
-      <h1 id="you-win-lose">You Win!</h1>
+      <h2 id="you-win-lose">You Win!</h2>
       <h3 id="game-outcome">You guessed Mr Peacock killed him in the billards room with the rope.<br><br>Congradulations!</h3>
-      <button id="play-again" type="button" name="button">Play Clue Again</button>
+      <div class="center-div">
+        <button id="play-again" type="button" name="button">Play Clue Again</button>
+      </div>
     </div>
 
   </div>
