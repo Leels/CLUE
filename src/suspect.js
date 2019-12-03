@@ -5,12 +5,11 @@ export const gameVars = {
 }
 
 export class Suspect {
-    constructor(name, knowledge, isPlayer, isMurderer, turnOrder) {
+    constructor(name, knowledge, isHuman, isMurderer) {
         this.name = name;
         this.knowledge = knowledge;
-        this.isPlayer = isPlayer;
+        this.isHuman = isHuman;
         this.isMurderer = isMurderer;
-        this.turnOrder = turnOrder;
 
         this.location = 'Hall';
         this.clues = [];
@@ -18,5 +17,9 @@ export class Suspect {
 
     moveTo(newRoom) {
         this.location = newRoom;
+    }
+
+    inquire() {
+
     }
 }
