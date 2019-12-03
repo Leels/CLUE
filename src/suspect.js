@@ -10,6 +10,7 @@ export class Suspect {
         this.knowledge = knowledge;
         this.isHuman = isHuman;
         this.isMurderer = isMurderer;
+        this.isAlive = true;
 
         this.location = 'Hall';
         this.clues = [];
@@ -19,7 +20,20 @@ export class Suspect {
         this.location = newRoom;
     }
 
-    inquire() {
+    inquire(whom, guessArr) {
+        for (let i = 0; i < guessArr.length; i++) {
+            if (whom.knowledge.includes(guessArr[i])) {
+                this.clues.push(guessArr[i]);
+                return guessArr[i];
+            }
+        }
+        return false;
+    }
 
+    accuse(caseFile, guessArr) {
+        for (let i = 0; i < guessArr.length; i++) {
+            if (caseFile[i] !== guessArr[i]) return false;
+        }
+        return true;
     }
 }
