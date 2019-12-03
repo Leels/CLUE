@@ -6,10 +6,6 @@
 
 ### Specs
 
-### GitHub Pages link
-
-  [Visit (site))](link)
-
 ### Known Bugs
 #### None
 
@@ -28,7 +24,7 @@
 
 ### Further Exploration
 
-[History of Clue Game (site))](https://www.history.com/news/clue-game-origin-wwii)
+[History of Clue Game](https://www.history.com/news/clue-game-origin-wwii)
 
 ### License
 #### This software is licensed under the MIT license.
