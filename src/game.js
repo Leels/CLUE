@@ -1,59 +1,55 @@
 import { Suspect } from './suspect.js';
+import { gameVars } from './suspect.js';
 
 function getRandomFrom(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
 export class Game {
-    constructor(playerColor) {
-        this.rooms = ['Study', 'Library', 'Lounge', 'Game Room', 'Hall', 'Dining Room', 'Conservatory', 'Ballroom', 'Kitchen'];
-        this.weapons = ['Revolver', 'Rope', 'Lead Pipe', 'Knife', 'Candlestick', 'Wrench'];
-        this.suspects = [];
+    constructor(playerChar) {
+        this.players = [];
         this.caseFile = [];
-        this.clues = ['Study', 'Library', 'Lounge', 'Game Room', 'Hall', 'Dining Room', 'Conservatory', 'Ballroom', 'Kitchen', 'Revolver', 'Rope', 'Lead Pipe', 'Knife', 'Candlestick', 'Wrench', 'white', 'blue', 'green', 'purple', 'yellow', 'red'];
         this.turnNumber = 0;
 
-        this.createMystery();
-        this.initSuspects(playerColor);
+        this.initSuspects(playerChar, this.initCaseFile());
     }
 
-    initSuspects(playerColor) {
-        let colors = ['white', 'blue', 'green', 'purple', 'yellow', 'red'];
-        let locations = this.rooms.map((x) => x);
-        for (let i = 0; i < 6; i++) {
-            const randomColor = getRandomFrom(colors);
-            const randomLoc = getRandomFrom(locations);
-            let randomClues = [];
+    initCaseFile() {
+        const cards = [];
+        for (const varType in gameVars) {
+            const randomPiece = getRandomFrom(gameVars[varType]);
+            this.caseFile.push(randomPiece);
 
-            for (let j = 0; j < 3; j++) {
-                const clue = getRandomFrom(this.clues);
-                this.clues.splice(this.clues.indexOf(clue), 1);
-                randomClues.push(clue);
-            }
-
-            this.suspects.push(
-                new Suspect(randomColor, randomClues, (randomColor === playerColor), this.caseFile.includes(randomColor), randomLoc)
-            );
-
-            colors.splice(colors.indexOf(randomColor), 1);
-            locations.splice(locations.indexOf(randomLoc), 1);
+            gameVars[varType].forEach((piece) => {
+                if (piece !== randomPiece) cards.push(piece);
+            });
         }
+        return cards;
     }
 
-    createMystery() {
-        let colors = ['white', 'blue', 'green', 'purple', 'yellow', 'red'];
+    initSuspects(playerChar, cards) {
+        const turns = [1, 2, 3, 4, 5, 6];
+        const murderer = this.caseFile[0];
 
-        const murderer = getRandomFrom(colors);
-        this.caseFile.push(murderer);
-        this.clues.splice(this.clues.indexOf(murderer), 1);
-
-        const murderWeapon = getRandomFrom(this.weapons);
-        this.caseFile.push(murderWeapon);
-        this.clues.splice(this.clues.indexOf(murderWeapon), 1);
-
-        const murderLocation = getRandomFrom(this.rooms);
-        this.caseFile.push(murderLocation);
-        this.clues.splice(this.clues.indexOf(murderLocation), 1);
+        gameVars.suspects.forEach((suspect) => {
+            const randTurn = getRandomFrom(turns);
+            turns.splice(turns.indexOf(randTurn), 1);
+            const knowledge = [];
+            for (let j = 0; j < 3; j++) {
+                const card = getRandomFrom(cards);
+                cards.splice(cards.indexOf(card), 1);
+                knowledge.push(card);
+            }
+            this.players.push(
+                new Suspect(
+                    suspect,
+                    knowledge,
+                    suspect === playerChar,
+                    suspect === murderer,
+                    randTurn
+                )
+            );
+        }, this); //THE 'THIS' PARAM SHOULD MAKE 'THIS' CONTEXT FIXED IN LOOP
     }
 
     accuse(murderer, murderWeapon, murderLocation) {
