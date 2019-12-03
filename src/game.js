@@ -1,13 +1,11 @@
-// import { Suspect } from './suspect.js';
+import { Suspect } from './suspect.js';
 
 function getRandomFrom(array) {
-    const index = Math.floor(array.length * Math.random());
-    return ({value: array[index], index: index});
+    return array[Math.floor(Math.random() * array.length)];
 }
 
- class Game {
+export class Game {
     constructor(playerColor) {
-        this.state = 'active';
         this.rooms = ['Study', 'Library', 'Lounge', 'Game Room', 'Hall', 'Dining Room', 'Conservatory', 'Ballroom', 'Kitchen'];
         this.weapons = ['Revolver', 'Rope', 'Lead Pipe', 'Knife', 'Candlestick', 'Wrench'];
         this.suspects = [];
@@ -29,16 +27,16 @@ function getRandomFrom(array) {
 
             for (let j = 0; j < 3; j++) {
                 const clue = getRandomFrom(this.clues);
-                this.clues.splice(clue.index, 1);
-                randomClues.push(clue.value);
+                this.clues.splice(this.clues.indexOf(clue), 1);
+                randomClues.push(clue);
             }
 
             this.suspects.push(
-                new Suspect(randomColor.value, randomClues, (randomColor.value === playerColor), this.caseFile.includes(randomColor.value), randomLoc.value)
+                new Suspect(randomColor, randomClues, (randomColor === playerColor), this.caseFile.includes(randomColor), randomLoc)
             );
 
-            colors.splice(randomColor.index, 1);
-            locations.splice(randomLoc.index, 1);
+            colors.splice(colors.indexOf(randomColor), 1);
+            locations.splice(locations.indexOf(randomLoc), 1);
         }
     }
 
@@ -46,16 +44,16 @@ function getRandomFrom(array) {
         let colors = ['white', 'blue', 'green', 'purple', 'yellow', 'red'];
 
         const murderer = getRandomFrom(colors);
-        this.caseFile.push(murderer.value);
-        this.clues.splice(this.clues.indexOf(murderer.value), 1);
+        this.caseFile.push(murderer);
+        this.clues.splice(this.clues.indexOf(murderer), 1);
 
         const murderWeapon = getRandomFrom(this.weapons);
-        this.caseFile.push(murderWeapon.value);
-        this.clues.splice(this.clues.indexOf(murderWeapon.value), 1);
+        this.caseFile.push(murderWeapon);
+        this.clues.splice(this.clues.indexOf(murderWeapon), 1);
 
         const murderLocation = getRandomFrom(this.rooms);
-        this.caseFile.push(murderLocation.value);
-        this.clues.splice(this.clues.indexOf(murderLocation.value), 1);
+        this.caseFile.push(murderLocation);
+        this.clues.splice(this.clues.indexOf(murderLocation), 1);
     }
 
     accuse(murderer, murderWeapon, murderLocation) {
