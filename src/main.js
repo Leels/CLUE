@@ -2,8 +2,8 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import  { } from './suspect.js'
-import  { } from './game.js'
+import  { Suspect } from './suspect.js'
+import  { Game } from './game.js'
 
 $(document).ready(function() {
   $("form#game").submit(function(event) {
@@ -16,40 +16,29 @@ $(document).ready(function() {
     $("#intro-page").hide();
     $("#clues").show();
 
-  $('.toGameboard').click(function() {
-    $("#clues").hide();
-    $("#rules").hide();
-    $("#gameboard").show();
-  });
+    $('.toGameboard').click(function() {
+      $("#clues").hide();
+      $("#rules").hide();
+      $("#gameboard").show();
+    });
 
-  $('#toClues').click(function() {
-    $("#gameboard").hide();
-    $("#clues").show();
-  });
+    $('#toClues').click(function() {
+      $("#gameboard").hide();
+      $("#clues").show();
+    });
 
-  $('#toRules').click(function() {
-    $("#gameboard").hide();
-    $("#rules").show();
-  });
+    $('#toRules').click(function() {
+      $("#gameboard").hide();
+      $("#rules").show();
+    });
 
-  $('#makeAccusation').click(function() {
-    let suspect = $('select#suspect').val();
-    let weapon = $('select#weapon').val();
-    let room = $('select#room').val();
-    accusationFunction(suspect, weapon, room);
-    if (winner) {
-      "You win!"
-    } else {
-      "You lose!"
-    }
-  });
 
-  $('#makeInquiry').click(function() {
-    let suspect = $('select#suspect').val();
-    let weapon = $('select#weapon').val();
-    let room = $('select#room').val();
-    inquireFunction(suspect, weapon, room);
-  });
+    $('#makeInquiry').click(function() {
+      let suspect = $('select#suspect').val();
+      let weapon = $('select#weapon').val();
+      let room = $('select#room').val();
+      inquireFunction(suspect, weapon, room);
+    });
 
     $('#door').click(function() {
       let currentRoom = $('#door').val();
@@ -62,13 +51,25 @@ $(document).ready(function() {
       $("#conservarory").hide();
       $("#hall").hide();
       $("#ballroom").hide();
-      $("#someRoom").show(currentRoom);
+      $("#room").show(currentRoom);
 
       if (no suspect in room) {
-        alert("There are no suspects in this room to ask for clues. Move onto a new room to continue.")
+        $("#entry-statement").text("There are no suspects in this room to ask for clues. Move onto a new room to continue.")
       } else {
-        alert(suspect + "is in the " + room + ". Ask them a question to gather more clues.")
-        }
+        $("#entry-statement").text(suspect + "is in the " + room + ". Ask them a question to gather more clues.")
+      }
+    });
 
-});
+    $('#makeAccusation').click(function() {
+      let suspect = $('select#suspect').val();
+      let weapon = $('select#weapon').val();
+      let room = $('select#room').val();
+      accuse(suspect, weapon, room);
+      if (winner) {
+        $("#final-result").show("You win!")
+      } else {
+        $("#final-result").show("You lose!")
+      }
+    });
+  });
 });
