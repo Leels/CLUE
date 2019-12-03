@@ -15,14 +15,11 @@ export class Game {
     }
 
     initCaseFile() {
-        const cards = [];
+        const cards = [...gameVars.guests, ...gameVars.rooms, ...gameVars.weapons];
         for (const varType in gameVars) {
-            const randomPiece = getRandomFrom(gameVars[varType]);
-            this.caseFile.push(randomPiece);
-
-            gameVars[varType].forEach((piece) => {
-                if (piece !== randomPiece) cards.push(piece);
-            });
+            const randCard = getRandomFrom(gameVars[varType]);
+            this.caseFile.push(randCard);
+            cards.splice(indexOf(randCard), 1);
         }
         return cards;
     }
