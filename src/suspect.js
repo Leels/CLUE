@@ -1,24 +1,25 @@
-const colorToName = {
-    white: 'Mrs. White',
-    blue: 'Mrs. Peacock',
-    green: 'Mr. Green',
-    purple: 'Prof. Plum',
-    yellow: 'Col. Mustard',
-    red: 'Ms. Scarlet'
+export const gameVars = {
+    guests: ['Mrs. White', 'Mrs. Peacock', 'Mr. Green', 'Prof. Plum', 'Col. Mustard', 'Ms. Scarlet'],
+    rooms: ['Study', 'Library', 'Lounge', 'Billiard Room', 'Hall', 'Dining Room', 'Conservatory', 'Ballroom', 'Kitchen'],
+    weapons: ['Revolver', 'Rope', 'Lead Pipe', 'Knife', 'Candlestick', 'Wrench']
 }
 
 export class Suspect {
-    constructor(color, knowledge, isPlayer) {
-        color = color.toLowerCase();
-
-        this.color = color;
-        this.name = colorToName[color];
+    constructor(name, knowledge, isHuman, isMurderer) {
+        this.name = name;
         this.knowledge = knowledge;
-        this.isPlayer = isPlayer;
-        this.location = null;
+        this.isHuman = isHuman;
+        this.isMurderer = isMurderer;
+
+        this.location = 'Hall';
+        this.clues = [];
     }
 
     moveTo(newRoom) {
         this.location = newRoom;
+    }
+
+    inquire() {
+
     }
 }
