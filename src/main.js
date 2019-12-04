@@ -5,130 +5,119 @@ import './css/styles.css';
 import './css/images/players';
 import  { Game } from './game.js';
 
-//make display service part of game
-function doTurn(i) {
+$(document).ready(function() {
+    let game;
+    $('#rules').hide();
+    $('#player-clues').hide();
+    $('#gameboard').hide();
+    $('#accusation').hide();
+    $('#final').hide();
+
+    $('form#initial-form').submit(e => {
+        e.preventDefault();
+
+        const playerCharacter = $('input[name=character]:checked').val();
+        game = new Game(playerCharacter);
+
+        $('#intro').hide();
+        $('#gameboard').show();
+        console.log(game.caseFile);
+        doTurn(game, 0);
+    });
+});
+
+function doTurn(game, i) {
+    console.log(i, game.suspects[i].name);
     const currentPlayer = game.suspects[i];
     const j = (game.suspects[i+1] ? i + 1 : 0);
     if (currentPlayer.isHuman) {
-        relocation(currentPlayer);
+        ruleCheck(); //DONE
+        // relocation(currentPlayer);
         rumination(currentPlayer);
-        inquisition(currentPlayer, j);
-        accusation(currentPlayer);
+        // inquisition(currentPlayer, j);
+        accusation(game, currentPlayer, j);
     }
     else {
-        setTimeout( () => {
-            currentPlayer.moveTo();
-        }, 1000);
-        setTimeout( () => {
-            currentPlayer.inquire();
-            doTurn(j);
-        }, 2000);
+        doTurn(game, j);
+        // setTimeout( () => {
+        //     currentPlayer.moveTo();
+        // }, 1000);
+        // setTimeout( () => {
+        //     currentPlayer.accuse();
+        //     doTurn(j);
+        // }, 2000);
     }
 }
 
-
-relocation(player) {
-    //show button to change room
-    //when clicked
-        //hide other divs
-        //show change room div
-        //when new room is clicked, run player.moveTo(newRoom);
-        //hide change room div
-}
-rumination(player) {
-    //show button to check check knowledge
-    //when clicked
-        //hide other divs
-        //show player knowledge (change img src attrs)
-        //when exit clicked, hide this, display main div
-}
-inquisition(player, j) {
-    //show inquiry button
-    //change display when clicked
-        //take inputs
-        //run: player.inquire(game.suspects[j], [])
-        //show result
-        //when button clicked
-            //doTurn(j);
-}
-accusation(player, j) {
-    //show accuse button
-    //change display when clicked
-        //take inputs
-        //run: player.accuse(game.caseFile, [])
-        //display win/loss, if loss then
-            //doTurn(j);
+function ruleCheck() {
+    $('#button-rules').click(() => {
+        $('#gameboard').hide();
+        $('#rules').show();
+        backToGameboard();
+    });
 }
 
+function backToGameboard() {
+    $('.button-backToGame').click(() => {
+        $('#rules').hide();
+        $('#player-clues').hide();
+        $('#accusation').hide();
+        $('#gameboard').show();
+    });
+}
 
+// function relocation(currentPlayer) {
+//     $('#button-checkClues').click(() => {
+//
+//     });
+//     //when clicked
+//     //hide other divs
+//     //show change room div
+//     //when new room is clicked, run player.moveTo(newRoom);
+//     //hide change room div
+// }
 
-
-
-$(document).ready(function() {
-    let game;
-
-    $("form#game").submit(function(event) {
-        event.preventDefault();
-        const character = $('input[name=character]:checked').val();
-        game = new Game(character);
-
-
-
-        $("#intro-page").hide();
-        $("#clues").show();
-
-        $('.toGameboard').click(function() {
-            $("#clues").hide();
-            $("#rules").hide();
-            $("#gameboard").show();
+function rumination(currentPlayer) {
+    $('#button-checkClues').click(() => {
+        $('#gameboard').hide();
+        $('#player-clues').show();
+        currentPlayer.knowledge.forEach((know, i) => {
+            const cardName = know.replace(' ', '-').toLowerCase();
+            $(`#card${i+1} img`).attr('src', 'https://raw.githubusercontent.com/Leels/CLUE/master/src/styles/images/cards/room-study.jpg');
         });
+        backToGameboard();
+    });
+}
 
-        $('#toClues').click(function() {
-            $("#gameboard").hide();
-            $("#clues").show();
-        });
+// function inquisition(currentPlayer, j) {
+//     // $('button')
+//     //change display when clicked
+//     //take inputs
+//     //run: player.inquire(game.suspects[j], [])
+//     //show result
+//     //when button clicked
+//     //doTurn(j);
+// }
 
-        $('#toRules').click(function() {
-            $("#gameboard").hide();
-            $("#rules").show();
-        });
-
-        $('#makeInquiry').click(function() {
-            let suspect = $('select#suspect').val();
-            let weapon = $('select#weapon').val();
-            let room = $('select#room').val();
-        });
-
-        $('#door').click(function() {
-            let currentRoom = $('#door').val();
-            $("#library").hide();
-            $("#study").hide();
-            $("#lounge").hide();
-            $("#billiard-room").hide();
-            $("#kitchen").hide();
-            $("#dining-room").hide();
-            $("#conservarory").hide();
-            $("#hall").hide();
-            $("#ballroom").hide();
-            $("#room").show(currentRoom);
-
-            if (no suspect in room) {
-                $("#entry-statement").text("There are no suspects in this room to ask for clues. Move onto a new room to continue.")
-            } else {
-                $("#entry-statement").text(suspect + "is in the " + room + ". Ask them a question to gather more clues.")
+function accusation(game, currentPlayer, j) {
+    $('#button-accuse').click(() => {
+        $('#gameboard').hide();
+        $('#accusation').show();
+        backToGameboard();
+        $('#accusation-form').submit(e => {
+            e.preventDefault();
+            const guess = [$('#suspect').val(), $('#location').val(), $('#weapon').val()];
+            const gameOver = currentPlayer.accuse(game.caseFile, guess);
+            console.log(gameOver);
+            if (gameOver) {
+                $('#accusation').hide();
+                $('#final').show();
             }
-        });
-
-        $('#makeAccusation').click(function() {
-            let suspect = $('select#suspect').val();
-            let weapon = $('select#weapon').val();
-            let room = $('select#room').val();
-            accuse(suspect, weapon, room);
-            if (winner) {
-                $("#final-result").show("You win!")
-            } else {
-                $("#final-result").show("You lose!")
+            else {
+                $('#accusation').hide();
+                $('#gameboard').show();
+                doTurn(game, j);
             }
         });
     });
-});
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang='en' dir='ltr'>
 <head>
   <meta charset="utf-8">
   <link href="https://db.onlinewebfonts.com/c/c374d838a58029dec24540958fb76db4?family=Gallia" rel="stylesheet" type="text/css"/>
@@ -7,93 +7,87 @@
   <title>Clue</title>
 </head>
 <body>
-  <div class="container">
+    <div class='container'>
+        <h1>Clue</h1>
 
-    <div id="intro">
-      <h1>Clue</h1>
-      <h5>Welcome to Tudor Mansion. It is a dark and stormy night and the lights overhead flicker... a murder has just occured, Mr. Boddy's body was found outside the front door. Only the six dinner guests that were invited to the party are present, and all six of these guests have potential motive to get rid of the billionaire. Select a player below to move throughout the mansion and gather clues to help uncover the mystery at Tudor Mansion. </h5>
-      <div class="form-group">
-        <form id="initial-form">
-          <h4>Choose a player:</h4>
-          <div class="grid select-character">
-            <div class="radio">
-              <img src="css/images/players/white.png">
-              <input id="mrs-white" type="radio" name="character" value="mrs-white">
-              <label for="mrs-white">Mrs. White</label>
-            </div>
-            <div class="radio">
-              <img src="css/images/players/peacock.png">
-              <input id="mrs-peacock" type="radio" name="character" value="mrs-peacock">
-              <label for="mrs-peacock">Mrs. Peacock</label>
-            </div>
-            <div class="radio">
-              <img src="css/images/players/green.png">
-              <input id="mr-green" type="radio" name="character" value="mr-green">
-              <label for="mr-green">Mr. Green</label>
-            </div>
-            <div class="radio">
-              <img src="css/images/players/plum.png">
-              <input id="prof-plum" type="radio" name="character" value="prof-plum">
-              <label for="prof-plum">Professor Plum</label>
-            </div>
-            <div class="radio">
-              <img src="css/images/players/mustard.png">
-              <input id="col-mustard" type="radio" name="character" value="col-mustard">
-              <label for="col-mustard">Colonel Mustard</label>
-            </div>
-            <div class="radio">
-              <img src="css/images/players/scarlet.png">
-              <input id="ms-scarlet" type="radio" name="character" value="ms-scarlet">
-              <label for="ms-scarlet">Miss Scarlet</label>
-            </div>
+        <div id='intro'>
+            <h5>Welcome to Tudor Mansion. It is a dark and stormy night and the lights overhead flicker... a murder has just occured, Mr. Boddy's body was found outside the front door. Only the six dinner guests that were invited to the party are present, and all six of these guests have potential motive to get rid of the billionaire. Select a player below to move throughout the mansion and gather clues to help uncover the mystery at Tudor Mansion.</h5>
+            <div class='form-group'>
+                <form id='initial-form'>
+                    <h4>Choose a player:</h4>
+                    <div class='grid'>
+                        <div class='radio'>
+                            <input id='mrs-white' type='radio' name='character' value='Mrs. White'>
+                            <label for='mrs-white'>Mrs. White</label>
+                        </div>
+                        <div class='radio'>
+                            <input id='mrs-peacock' type='radio' name='character' value='Mrs. Peacock'>
+                            <label for='mrs-peacock'>Mrs. Peacock</label>
+                        </div>
+                        <div class='radio'>
+                            <input id='mr-green' type='radio' name='character' value='Mr. Green'>
+                            <label for='mr-green'>Mr. Green</label>
+                        </div>
+                        <div class='radio'>
+                            <input id='prof-plum' type='radio' name='character' value='Prof. Plum'>
+                            <label for='prof-plum'>Professor Plum</label>
+                        </div>
+                        <div class='radio'>
+                            <input id='col-mustard' type='radio' name='character' value='Col. Mustard'>
+                            <label for='col-mustard'>Colonel Mustard</label>
+                        </div>
+                        <div class='radio'>
+                            <input id='ms-scarlet' type='radio' name='character' value='Ms. Scarlet'>
+                            <label for='ms-scarlet'>Miss Scarlet</label>
+                        </div>
 
-          </div>
-          <div class="center-div">
-            <button type="button" id="start-game">Select Character and Start Game</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div id="rules">
-      <h2>The Rules of Clue:</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <div class="center-div">
-        <button class="back-to-gameboard" type="button">Proceed to Game</button>
-      </div>
-    </div>
-
-    <div id="player-clues">
-      <h2>Your Clues:</h2>
-      <div id="player-clues-deck" class="container">
-        <!-- The code between this comment and the one below is just an example of how this will look.  The below HTML should be populated for each player card via javascript UNLESS an image of origonal cards is used, in which case we will simply populate an empty div with a class, id, and style to reflect image dimensions-->
-
-        <div id="card1" class="card" style="width: 18rem;">
-          <img src="https://cdn.webshopapp.com/shops/263124/files/235199599/image.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
+                    </div>
+                    <div class='center-div'>
+                        <button type='submit' id='start-game'>Select Character and Start Game</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div id="card2" class="card" style="width: 18rem;">
-          <img src="https://cdn.webshopapp.com/shops/263124/files/235199599/image.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
+
+        <div id='rules'>
+            <h2>The Rules of Clue:</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class='center-div'>
+                <button class='button-backToGame' type='button'>Back to Game</button>
+            </div>
         </div>
-        <div id="card3" class="card" style="width: 18rem;">
-          <img src="https://cdn.webshopapp.com/shops/263124/files/235199599/image.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
+
+        <div id='player-clues'>
+            <h2>Your Clues:</h2>
+            <div id='player-clues-deck' class='container'>
+                <!-- The code between this comment and the one below is just an example of how this will look.  The below HTML should be populated for each player card via javascript UNLESS an image of origonal cards is used, in which case we will simply populate an empty div with a class, id, and style to reflect image dimensions-->
+
+                <div id='card1' class='card' style='width: 18rem;'>
+                    <img src='https://cdn.webshopapp.com/shops/263124/files/235199599/image.jpg' class='card-img-top' alt='...'>
+                    <div class='card-body'>
+                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div id='card2' class='card' style='width: 18rem;'>
+                    <img src='https://cdn.webshopapp.com/shops/263124/files/235199599/image.jpg' class='card-img-top' alt='...'>
+                    <div class='card-body'>
+                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div id='card3' class='card' style='width: 18rem;'>
+                    <img src='https://cdn.webshopapp.com/shops/263124/files/235199599/image.jpg' class='card-img-top' alt='...'>
+                    <div class='card-body'>
+                        <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <!--  -->
+                <div class='center-div'>
+                    <button class='button-backToGame' type='button'>Proceed to Game</button>
+                </div>
+            </div>
         </div>
-        <!--  -->
-        <div class="center-div">
-          <button class="back-to-gameboard" type="button">Proceed to Game</button>
-        </div>
-      </div>
-    </div>
 
     <div id="gameboard">
       <div class="wrapper">
@@ -109,10 +103,10 @@
         <div class="box bottom-buttons">
           <div class="gameboard-bottom">
             <div class="center-div">
-              <button class="rules-button" type="button" name="button">Rules</button>
-              <button class="view-player-clues-button" type="button" name="button">Your Clues</button>
-              <button class="talk-to-button" type="button" name="button">Make Inquiry</button>
-              <button class="make-accusation-button" type="button" name="button">Make Accusation</button>
+                <button id='button-rules' type='button' name='button'>Rules</button>
+                <button id='button-checkClues' type='button' name='button'>Your Clues</button>
+                <button id='button-accuse' type='button' name='button'>Make Accusation</button>
+                <button id='talk-to-button' type='button' name='button'>Talk to Soandso</button>
               <!-- The talk-to-button content should be populated via javascript upon eacn gameboard  -->
             </div>
           </div>
@@ -164,59 +158,59 @@
 
 
 
-    <div id="accusation">
-      <h2>Make an Accusation</h2>
-      <h5>WARNING: Be sure of your accusation!  If you are incorrect, you will lose the game.</h5>
-      <form id="accusation-form">
-        <div class="center-div">
-          <select name="suspect">
-            <option selected="selected">Suspect</option>
-            <option value="white">Mrs. White</option>
-            <option value="blue">Mrs. Peacock</option>
-            <option value="green">Mr. Green</option>
-            <option value="purple">Professor Plum</option>
-            <option value="yellow">Colonel Mustard</option>
-            <option value="red">Miss Scarlet</option>
-          </select>
-          <select name="weapon">
-            <option selected="selected">Weapon</option>
-            <option value="revolver">Revolver</option>
-            <option value="rope">Rope</option>
-            <option value="lead pipe">Lead Pipe</option>
-            <option value="knife">Knife</option>
-            <option value="candlestick">Candlestick</option>
-            <option value="wrench">Wrench</option>
-          </select>
-          <select name="location">
-            <option selected="selected">Location</option>
-            <option value="study">Study</option>
-            <option value="library">Library</option>
-            <option value="lounge">Lounge</option>
-            <option value="game room">Game Room</option>
-            <option value="hall">Hall</option>
-            <option value="dining room">Dining Room</option>
-            <option value="conservatory">Conservatory</option>
-            <option value="ballroom">Ballroom</option>
-            <option value="kitchen">Kitchen</option>
-          </select>
+        <div id='accusation'>
+            <h2>Make an Accusation</h2>
+            <h5>WARNING: Be sure of your accusation!  If you are incorrect, you will lose the game.</h5>
+            <form id='accusation-form'>
+                <div class='center-div'>
+                    <select id='suspect'>
+                        <option selected='selected'>Suspect</option>
+                        <option value='Mrs. White'>Mrs. White</option>
+                        <option value='Mrs. Peacock'>Mrs. Peacock</option>
+                        <option value='Mr. Green'>Mr. Green</option>
+                        <option value='Prof. Plum'>Professor Plum</option>
+                        <option value='Col. Mustard'>Colonel Mustard</option>
+                        <option value='Ms. Scarlet'>Miss Scarlet</option>
+                    </select>
+                    <select id='location'>
+                        <option selected='selected'>Location</option>
+                        <option value='Study'>Study</option>
+                        <option value='Library'>Library</option>
+                        <option value='Lounge'>Lounge</option>
+                        <option value='Billiard Room'>Billiard Room</option>
+                        <option value='Hall'>Hall</option>
+                        <option value='Dining Room'>Dining Room</option>
+                        <option value='Conservatory'>Conservatory</option>
+                        <option value='Ballroom'>Ballroom</option>
+                        <option value='Kitchen'>Kitchen</option>
+                    </select>
+                    <select id='weapon'>
+                        <option selected='selected'>Weapon</option>
+                        <option value='Revolver'>Revolver</option>
+                        <option value='Rope'>Rope</option>
+                        <option value='Lead Pipe'>Lead Pipe</option>
+                        <option value='Knife'>Knife</option>
+                        <option value='Candlestick'>Candlestick</option>
+                        <option value='Wrench'>Wrench</option>
+                    </select>
+                </div>
+                <div class='center-div'>
+                    <button id='submit-accusation' type='submit'>Submit Accusation</button>
+                    <button class='button-backToGame' type='button'>Back to Game</button>
+                </div>
+            </form>
+
         </div>
-        <div class="center-div">
-          <button id="submit-accusation" type="button">Submit Accusation</button>
-          <button class="back-to-gameboard" type="button">Back to Game</button>
+
+        <div id='final'>
+            <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
+            <h2 id='you-win-lose'>You Win!</h2>
+            <h3 id='game-outcome'>You guessed Mr Peacock killed him in the billards room with the rope.<br><br>Congratulations!</h3>
+            <div class='center-div'>
+                <button id='play-again' type='button' name='button'>Play Clue Again</button>
+            </div>
         </div>
-      </form>
 
     </div>
-
-    <div id="final">
-      <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
-      <h2 id="you-win-lose">You Win!</h2>
-      <h3 id="game-outcome">You guessed Mr Peacock killed him in the billards room with the rope.<br><br>Congratulations!</h3>
-      <div class="center-div">
-        <button id="play-again" type="button" name="button">Play Clue Again</button>
-      </div>
-    </div>
-
-  </div>
 </body>
 </html>
