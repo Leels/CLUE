@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang='en' dir='ltr'>
 <head>
-    <meta charset='utf-8'>
-    <link href='https://fonts.googleapis.com/css?family=Abril+Fatface|Bowlby+One+SC|Calistoga|Patua+One|Righteous&display=swap' rel='stylesheet'>
-    <title>Clue</title>
+  <meta charset="utf-8">
+  <link href="https://db.onlinewebfonts.com/c/c374d838a58029dec24540958fb76db4?family=Gallia" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bowlby+One+SC|Calistoga|Patua+One|Righteous&display=swap" rel="stylesheet">
+  <title>Clue</title>
 </head>
 <body>
     <div class='container'>
@@ -88,25 +89,74 @@
             </div>
         </div>
 
-        <div id='gameboard'>
-            <div id='gameboard-top'>
-                <div id='current-room'>
-                    <!-- Content added dynamically with js -->
-                </div>
-                <div id='message-board'>
-                    <!-- Content added dynamically with js -->
-                </div>
-            </div>
-            <div class='gameboard-bottom'>
-                <div class='center-div'>
-                    <button id='button-rules' type='button' name='button'>Rules</button>
-                    <button id='button-checkClues' type='button' name='button'>Your Clues</button>
-                    <button id='button-accuse' type='button' name='button'>Make Accusation</button>
-                    <button id='talk-to-button' type='button' name='button'>Talk to Soandso</button>
-                    <!-- The talk-to-button content should be populated via javascript upon eacn gameboard  -->
-                </div>
-            </div>
+    <div id="gameboard">
+      <div class="wrapper">
+        <div class="box heading">
+          <h2>Clue</h2>
         </div>
+        <div class="box rooms fancy-border">
+          <h2>Billiard Room</h2>
+        </div>
+        <div class="box message-board">
+          <h2>Message Board</h2>
+        </div>
+        <div class="box bottom-buttons">
+          <div class="gameboard-bottom">
+            <div class="center-div">
+                <button id='button-rules' type='button' name='button'>Rules</button>
+                <button id='button-checkClues' type='button' name='button'>Your Clues</button>
+                <button id='button-accuse' type='button' name='button'>Make Accusation</button>
+                <button id='talk-to-button' type='button' name='button'>Talk to Soandso</button>
+              <!-- The talk-to-button content should be populated via javascript upon eacn gameboard  -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="inquiry">
+        <h2>Make an Inquiry</h2>
+        <form id="inquiry-form">
+          <div class="center-div">
+            <select name="suspect">
+              <option selected="selected">Suspect</option>
+              <option value="white">Mrs. White</option>
+              <option value="blue">Mrs. Peacock</option>
+              <option value="green">Mr. Green</option>
+              <option value="purple">Professor Plum</option>
+              <option value="yellow">Colonel Mustard</option>
+              <option value="red">Miss Scarlet</option>
+            </select>
+            <select name="weapon">
+              <option selected="selected">Weapon</option>
+              <option value="revolver">Revolver</option>
+              <option value="rope">Rope</option>
+              <option value="lead pipe">Lead Pipe</option>
+              <option value="knife">Knife</option>
+              <option value="candlestick">Candlestick</option>
+              <option value="wrench">Wrench</option>
+            </select>
+            <select name="location">
+              <option selected="selected">Location</option>
+              <option value="study">Study</option>
+              <option value="library">Library</option>
+              <option value="lounge">Lounge</option>
+              <option value="game room">Game Room</option>
+              <option value="hall">Hall</option>
+              <option value="dining room">Dining Room</option>
+              <option value="conservatory">Conservatory</option>
+              <option value="ballroom">Ballroom</option>
+              <option value="kitchen">Kitchen</option>
+            </select>
+          </div>
+          <div class="center-div">
+            <button id="submit-inquiry" type="button">Submit Inquiry</button>
+            <button class="back-to-gameboard" type="button">Back to Game</button>
+          </div>
+        </form>
+
+
 
         <div id='accusation'>
             <h2>Make an Accusation</h2>
