@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bowlby+One+SC|Calistoga|Patua+One|Righteous&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
   <title>Clue</title>
 </head>
 <body>
@@ -14,28 +15,34 @@
       <div class="form-group">
         <form id="initial-form">
           <h4>Choose a player:</h4>
-          <div class="grid">
+          <div class="grid select-character">
             <div class="radio">
+              <img src="css/images/players/white.png">
               <input id="mrs-white" type="radio" name="character" value="mrs-white">
               <label for="mrs-white">Mrs. White</label>
             </div>
             <div class="radio">
+              <img src="css/images/players/peacock.png">
               <input id="mrs-peacock" type="radio" name="character" value="mrs-peacock">
               <label for="mrs-peacock">Mrs. Peacock</label>
             </div>
             <div class="radio">
+              <img src="css/images/players/green.png">
               <input id="mr-green" type="radio" name="character" value="mr-green">
               <label for="mr-green">Mr. Green</label>
             </div>
             <div class="radio">
+              <img src="css/images/players/plum.png">
               <input id="prof-plum" type="radio" name="character" value="prof-plum">
               <label for="prof-plum">Professor Plum</label>
             </div>
             <div class="radio">
+              <img src="css/images/players/mustard.png">
               <input id="col-mustard" type="radio" name="character" value="col-mustard">
               <label for="col-mustard">Colonel Mustard</label>
             </div>
             <div class="radio">
+              <img src="css/images/players/scarlet.png">
               <input id="ms-scarlet" type="radio" name="character" value="ms-scarlet">
               <label for="ms-scarlet">Miss Scarlet</label>
             </div>
@@ -89,24 +96,68 @@
     </div>
 
     <div id="gameboard">
-      <div id="gameboard-top">
-        <div id="current-room">
-          <!-- Content added dynamically with js -->
+      <div class="wrapper">
+        <div class="box heading">Heading</div>
+        <div class="box rooms fancy-border">Billiard Room
         </div>
-        <div id="message-board">
-          <!-- Content added dynamically with js -->
+        <div class="box message-board">Messages</div>
+        <div class="box bottom-buttons">
+          <div class="gameboard-bottom">
+            <div class="center-div">
+              <button class="rules-button" type="button" name="button">Rules</button>
+              <button class="view-player-clues-button" type="button" name="button">Your Clues</button>
+              <button class="talk-to-button" type="button" name="button">Make Inquiry</button>
+              <button class="make-accusation-button" type="button" name="button">Make Accusation</button>
+              <!-- The talk-to-button content should be populated via javascript upon eacn gameboard  -->
+            </div>
+          </div>
         </div>
       </div>
-      <div class="gameboard-bottom">
-        <div class="center-div">
-          <button class="rules-button" type="button" name="button">Rules</button>
-          <button class="view-player-clues-button" type="button" name="button">Your Clues</button>
-          <button class="make-accusation-button" type="button" name="button">Make Accusation</button>
-          <button class="talk-to-button" type="button" name="button">Talk to Soandso</button>
-          <!-- The talk-to-button content should be populated via javascript upon eacn gameboard  -->
-        </div>
-      </div>
-    </div>
+
+
+
+      <div id="inquiry">
+        <h2>Make an Inquiry</h2>
+        <form id="inquiry-form">
+          <div class="center-div">
+            <select name="suspect">
+              <option selected="selected">Suspect</option>
+              <option value="white">Mrs. White</option>
+              <option value="blue">Mrs. Peacock</option>
+              <option value="green">Mr. Green</option>
+              <option value="purple">Professor Plum</option>
+              <option value="yellow">Colonel Mustard</option>
+              <option value="red">Miss Scarlet</option>
+            </select>
+            <select name="weapon">
+              <option selected="selected">Weapon</option>
+              <option value="revolver">Revolver</option>
+              <option value="rope">Rope</option>
+              <option value="lead pipe">Lead Pipe</option>
+              <option value="knife">Knife</option>
+              <option value="candlestick">Candlestick</option>
+              <option value="wrench">Wrench</option>
+            </select>
+            <select name="location">
+              <option selected="selected">Location</option>
+              <option value="study">Study</option>
+              <option value="library">Library</option>
+              <option value="lounge">Lounge</option>
+              <option value="game room">Game Room</option>
+              <option value="hall">Hall</option>
+              <option value="dining room">Dining Room</option>
+              <option value="conservatory">Conservatory</option>
+              <option value="ballroom">Ballroom</option>
+              <option value="kitchen">Kitchen</option>
+            </select>
+          </div>
+          <div class="center-div">
+            <button id="submit-inquiry" type="button">Submit Inquiry</button>
+            <button class="back-to-gameboard" type="button">Back to Game</button>
+          </div>
+        </form>
+
+
 
     <div id="accusation">
       <h2>Make an Accusation</h2>
