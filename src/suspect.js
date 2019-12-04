@@ -31,8 +31,6 @@ export class Suspect {
     }
 
     accuse(caseFile, guessArr) {
-        console.log(caseFile);
-        console.log(guessArr);
         for (let i = 0; i < guessArr.length; i++) {
             if (caseFile[i] !== guessArr[i]) return false;
         }

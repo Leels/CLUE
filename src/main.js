@@ -2,7 +2,6 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import './css/images/players';
 import  { Game } from './game.js';
 
 $(document).ready(function() {
@@ -11,6 +10,7 @@ $(document).ready(function() {
     $('#player-clues').hide();
     $('#gameboard').hide();
     $('#accusation').hide();
+    $('#inquiry').hide();
     $('#final').hide();
 
     $('form#initial-form').submit(e => {
@@ -34,7 +34,7 @@ function doTurn(game, i) {
         ruleCheck(); //DONE
         // relocation(currentPlayer);
         rumination(currentPlayer);
-        // inquisition(currentPlayer, j);
+        inquisition(game, currentPlayer, j);
         accusation(game, currentPlayer, j);
     }
     else {
@@ -62,6 +62,7 @@ function backToGameboard() {
         $('#rules').hide();
         $('#player-clues').hide();
         $('#accusation').hide();
+        $('#inquiry').hide();
         $('#gameboard').show();
     });
 }
@@ -89,35 +90,51 @@ function rumination(currentPlayer) {
     });
 }
 
-// function inquisition(currentPlayer, j) {
-//     // $('button')
-//     //change display when clicked
-//     //take inputs
-//     //run: player.inquire(game.suspects[j], [])
-//     //show result
-//     //when button clicked
-//     //doTurn(j);
-// }
+function inquisition(game, currentPlayer, j) {
+    $('#button-inquire').click(() => {
+        $('#gameboard').hide();
+        $('#inquiry').show();
+        backToGameboard();
+
+        $('#inquiry-form').submit(e => {
+            e.preventDefault();
+
+            const guess = [$('#suspect').val(), $('#location').val(), $('#weapon').val()];
+            $('#murderer').val('');
+            $('#murder-loc').val('');
+            $('#murder-wep').val('');
+
+            const result = currentPlayer.inquire(game.suspects[j], guess);
+            alert(result);
+
+            $('#inquiry').hide();
+            $('#gameboard').show();
+            $('#inquiry-form').reset();
+            doTurn(game, j);
+        });
+    });
+}
 
 function accusation(game, currentPlayer, j) {
     $('#button-accuse').click(() => {
         $('#gameboard').hide();
         $('#accusation').show();
         backToGameboard();
+
         $('#accusation-form').submit(e => {
             e.preventDefault();
-            const guess = [$('#suspect').val(), $('#location').val(), $('#weapon').val()];
+
+            const guess = [$('#murderer').val(), $('#murder-loc').val(), $('#murder-wep').val()];
+            $('#murderer').val('');
+            $('#murder-loc').val('');
+            $('#murder-wep').val('');
+
             const gameOver = currentPlayer.accuse(game.caseFile, guess);
-            console.log(gameOver);
-            if (gameOver) {
-                $('#accusation').hide();
-                $('#final').show();
-            }
-            else {
-                $('#accusation').hide();
-                $('#gameboard').show();
-                doTurn(game, j);
-            }
+            alert(gameOver);
+
+            // $('#accusation-form').reset();
+            $('#accusation').hide();
+            $('#final').show();
         });
     });
 }
