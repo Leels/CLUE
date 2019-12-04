@@ -1,7 +1,7 @@
 /* global style */
 
 body {
-  background-color: #f2f3f7;
+  background-color: #fff7e6;
 }
 button, select, h1, .radio {
   background-color: white;
@@ -46,6 +46,7 @@ h1 {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 15px;
   width: 75%;
   border: solid;
   border-radius: 5px;
@@ -53,10 +54,11 @@ h1 {
 
 .radio {
   border: solid;
-  padding-top: 10px;
+  padding-top: 0px;
   width: 150px;
   border-radius: 5px;
 }
+
 /*gameboard*/
 
 .wrapper {
@@ -69,7 +71,7 @@ h1 {
 
 .box {
   background-color: #003366;
-  color: #fff;
+  color: #fff7e6;
   border-radius: 5px;
   padding: 20px;
   font-size: 150%;
@@ -78,25 +80,70 @@ h1 {
 
 .heading {
   grid-column: 1 / span 3;
-  padding-top:
+}
+
+.heading h2 {
+  font-size: 200%;
+  text-align: center;
 }
 
 .rooms {
   grid-column: 1 ;
   grid-row: 2 ;
-  background-color: #004d00;
   font-family: Gallia;
   font-size: 200%;
   text-align: center;
   color: #B88846;
+
 }
 
 .rooms h2 {
+  display: block;
   font-family: Gallia;
   font-size: 200%;
   text-align: center;
-  color: #B88846;
 }
+
+/* room colors */
+#study {
+  background-color: #e69d00;
+  color: #4d2600;
+  padding: 100px 0;
+}
+#library {
+  background-color: #800000;
+  padding: 100px 0;
+}
+#lounge {
+  background-color: #b30059;
+  /* color: #fff7e6; */
+  padding: 100px 0;
+}
+#billiard-room {
+  background-color: #004d00;
+  padding: 100px 0;
+}
+#hall {
+  background-color: #660000;
+  padding: 100px 0;
+}
+#dining-room {
+  background-color: #99ccff;
+  padding: 100px 0;
+}
+#conservatory {
+  background-color: #ccccff;
+  padding: 100px 0;
+}
+#ballroom {
+  background-color: #993333;
+  padding: 100px 0;
+}
+#kitchen {
+  background-color: #e6e600;
+  padding: 100px 0;
+}
+/* end room colors */
 
 .message-board {
   grid-column: 2 span 2;
