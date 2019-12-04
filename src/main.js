@@ -82,7 +82,7 @@ function rumination(currentPlayer) {
         $('#player-clues').show();
         currentPlayer.knowledge.forEach((know, i) => {
             const cardName = know.replace(' ', '-').toLowerCase();
-            $(`#card${i+1} img`).attr('src', `./../assets/cards/${cardName}.jpg`);
+            $(`#card${i+1} img`).attr('src', 'https://raw.githubusercontent.com/Leels/CLUE/master/src/styles/images/cards/room-study.jpg');
         });
         backToGameboard();
     });
