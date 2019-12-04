@@ -1,7 +1,8 @@
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/styles.css';
+import './css/styles.css';
+import './css/images/players';
 import  { Game } from './game.js';
 
 //make display service part of game
