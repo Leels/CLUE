@@ -2,6 +2,7 @@
 <html lang='en' dir='ltr'>
 <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/c374d838a58029dec24540958fb76db4?family=Gallia" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bowlby+One+SC|Calistoga|Patua+One|Righteous&display=swap" rel="stylesheet">
     <title>Clue</title>
@@ -10,8 +11,8 @@
     <h1>Clue</h1>
 
     <div id='intro-page'>
-        <p>Welcome to Tudor Mansion. It is a dark and stormy night and the lights overhead flicker... a murder has just occured, Mr. Boddy's body was found outside the front door. Only the six dinner guests that were invited to the party are present, and all six of these guests have potential motive to get rid of the billionaire. Select a player below to move throughout the mansion and gather clues to help uncover the mystery at Tudor Mansion.</h5>
-        <h3>Select a player:</p>
+        <p>Welcome to Tudor Mansion. It is a dark and stormy night and the lights overhead flicker... a murder has just occured, Mr. Boddy's body was found outside the front door. Only the six dinner guests that were invited to the party are present, and all six of these guests have potential motive to get rid of the billionaire. Select a player below to move throughout the mansion and gather clues to help uncover the mystery at Tudor Mansion.</p>
+        <h3>Select a player:</h3>
         <form id='initial-form'>
             <label data-color='white'>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/white.png" alt="Mrs. White">
@@ -43,13 +44,13 @@
                 <h3>Miss Scarlet</h3>
                 <input type='radio' name='character' value='Ms. Scarlet'>
             </label>
-
-            <button type='submit'>Start Game</button>
+            <button type='submit' id='start-game'>Start Game</button>
         </form>
     </div>
 
+
     <div id="gameboard">
-        <div class="wrapper container">
+        <div class="wrapper">
             <!-- rooms to hide and show-->
             <div class="box" id='room'>
                 <h2>ROOM TEXT</h2>
@@ -57,7 +58,7 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfju_D-vz2QDlb25gpDYHTD_vk8KbZbPNwwBH8tkJRAJIR3DatLKnitmc&s">
                 </div>
             </div>
-            <div class="box message-board">
+            <div class="box message-board fancy-border">
                 <h5>You have encountered Miss Scarlet in the Hall. Ask a question to gain a new clue about the murder at Tudor Mansion.</h5>
                 <form id="inquiry-form">
                     <div class="center-div">
@@ -101,7 +102,7 @@
                     </div>
                 </form>
             </div>
-            <div class="box bottom-buttons">
+            <div class="box bottom-buttons fancy-border">
                 <div class="gameboard-bottom">
                     <div class="center-div">
                         <button id='button-rules' type='button' name='button'>Rules</button>
@@ -111,79 +112,96 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id='rules'>
-        <h2>The Rules of Clue:</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div class='center-div'>
-            <button class='button-backToGame' type='button'>Back to Game</button>
+        <div id='rules' class="box fancy-border">
+            <h2>The Rules of Clue:</h2><br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class='center-div'>
+                <button class='button-backToGame' type='button'>Back to Game</button>
+            </div>
         </div>
-    </div>
 
-    <div id='player-clues'>
-        <h2>Your Clues:</h2>
-        <div id='player-clues-deck' class='container'>
+        <div id='player-clues' class="box fancy-border">
+            <h2>Your Clues:</h2>
+            <div id='player-clues-deck'>
+
+            </div>
+            <div class='center-div'>
+                <button class='button-backToGame' type='button'>Back to Game</button>
+            </div>
+        </div>
+
+        <div id='accusation'>
+            <div class="box fancy-border">
+                <h2>Make an Accusation</h2><br>
+                <h5><span id="warning">WARNING: Be sure of your accusation!  If you are incorrect, you will lose the game.</span></h5><br>
+                <h5>I beleive it was ... in the ... with the ...</h5><br>
+                <form id='accusation-form'>
+                    <div class='center-div'>
+                        <select id='suspect'>
+                            <option selected='selected'>Suspect</option>
+                            <option value='Mrs. White'>Mrs. White</option>
+                            <option value='Mrs. Peacock'>Mrs. Peacock</option>
+                            <option value='Mr. Green'>Mr. Green</option>
+                            <option value='Prof. Plum'>Professor Plum</option>
+                            <option value='Col. Mustard'>Colonel Mustard</option>
+                            <option value='Ms. Scarlet'>Miss Scarlet</option>
+                        </select>
+                        <select id='location'>
+                            <option selected='selected'>Location</option>
+                            <option value='Study'>Study</option>
+                            <option value='Library'>Library</option>
+                            <option value='Lounge'>Lounge</option>
+                            <option value='Billiard Room'>Billiard Room</option>
+                            <option value='Hall'>Hall</option>
+                            <option value='Dining Room'>Dining Room</option>
+                            <option value='Conservatory'>Conservatory</option>
+                            <option value='Ballroom'>Ballroom</option>
+                            <option value='Kitchen'>Kitchen</option>
+                        </select>
+                        <select id='weapon'>
+                            <option selected='selected'>Weapon</option>
+                            <option value='Revolver'>Revolver</option>
+                            <option value='Rope'>Rope</option>
+                            <option value='Lead Pipe'>Lead Pipe</option>
+                            <option value='Knife'>Knife</option>
+                            <option value='Candlestick'>Candlestick</option>
+                            <option value='Wrench'>Wrench</option>
+                        </select>
+                    </div>
+                    <div class='center-div'>
+                        <button id='submit-accusation' type='submit'>Submit Accusation</button>
+                        <button class='button-backToGame' type='button'>Back to Game</button>
+                    </div>
+                </form>
+            </div>
 
         </div>
-        <div class='center-div'>
-            <button class='button-backToGame' type='button'>Proceed to Game</button>
-        </div>
-    </div>
 
-    <div id='accusation'>
-      <h2>Make an Accusation</h2>
-      <h5>WARNING: Be sure of your accusation!  If you are incorrect, you will lose the game.</h5>
-      <form id='accusation-form'>
-        <div class='center-div'>
-          <select id='murderer'>
-            <option selected='selected'>Suspect</option>
-            <option value='Mrs. White'>Mrs. White</option>
-            <option value='Mrs. Peacock'>Mrs. Peacock</option>
-            <option value='Mr. Green'>Mr. Green</option>
-            <option value='Prof. Plum'>Professor Plum</option>
-            <option value='Col. Mustard'>Colonel Mustard</option>
-            <option value='Ms. Scarlet'>Miss Scarlet</option>
-          </select>
-          <select id='murder-loc'>
-            <option selected='selected'>Location</option>
-            <option value='Study'>Study</option>
-            <option value='Library'>Library</option>
-            <option value='Lounge'>Lounge</option>
-            <option value='Billiard Room'>Billiard Room</option>
-            <option value='Hall'>Hall</option>
-            <option value='Dining Room'>Dining Room</option>
-            <option value='Conservatory'>Conservatory</option>
-            <option value='Ballroom'>Ballroom</option>
-            <option value='Kitchen'>Kitchen</option>
-          </select>
-          <select id='murder-wep'>
-            <option selected='selected'>Weapon</option>
-            <option value='Revolver'>Revolver</option>
-            <option value='Rope'>Rope</option>
-            <option value='Lead Pipe'>Lead Pipe</option>
-            <option value='Knife'>Knife</option>
-            <option value='Candlestick'>Candlestick</option>
-            <option value='Wrench'>Wrench</option>
-          </select>
-        </div>
-        <div class='center-div'>
-          <button id='submit-accusation' type='submit'>Submit Accusation</button>
-          <button class='button-backToGame' type='button'>Back to Game</button>
-        </div>
-      </form>
+        <div id='final'>
+            <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
+            <h2 id='you-win-lose'>You Win!</h2>
+            <h3 id='game-outcome'>You guessed <span class="reveal-suspect"></span> in the <span class="reveal-room"></span> with the <span class="reveal-weapon"></span>.<br><br>Congratulations, you guessed the murder mystery!</h3>
+            <div class='center-div'>
+                <button id='play-again' type='button' name='button' value="Reset" onClick="window.location.reload()">Play Again</button>
+            </div>
+            <div class='center-div'>
+                <button id='submit-accusation' type='submit'>Submit Accusation</button>
+                <button class='button-backToGame' type='button'>Back to Game</button>
+            </div>
+        </form>
 
     </div>
 
     <div id='final'>
-      <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
-      <h2 id='you-win-lose'></h2>
-      <h3 id='game-outcome'></h3>
-      <div class='center-div'>
-        <button id='play-again' type='button' name='button'>Play Again</button>
-      </div>
+        <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
+        <h2 id='you-win-lose'></h2>
+        <h3 id='game-outcome'></h3>
+        <div class='center-div'>
+            <button id='play-again' type='button' name='button'>Play Again</button>
+        </div>
 
     </div>
 
