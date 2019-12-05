@@ -58,7 +58,6 @@ h1 {
     font-style: italic;
 }
 #initial-form {
-    width: 100%;
     display: grid;
     grid-template-columns: 10rem 10rem 10rem;
     grid-template-rows: 15rem 15rem 4rem;
