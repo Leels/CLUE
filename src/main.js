@@ -143,6 +143,13 @@ function backToGameboard() {
 }
 
 function displayRoom(room) {
+    function randomPlayer() {
+        const players = ['Mrs. White', 'Mrs. Peacock', 'Mr. Green', 'Prof. Plum', 'Col. Mustard', 'Ms. Scarlet'];
+        return players[Math.floor(Math.random()*6)];
+
+    }
+    $('#current-player-in-room').html(randomPlayer());
+    $('#current-room').html(room);
     $('#room').removeClass().addClass(room.replace(' ', '-').toLowerCase());
     $('#room h2').text(room);
 }
