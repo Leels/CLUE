@@ -1,143 +1,135 @@
 <!DOCTYPE html>
 <html lang='en' dir='ltr'>
 <head>
-  <meta charset="utf-8">
-  <link href="https://db.onlinewebfonts.com/c/c374d838a58029dec24540958fb76db4?family=Gallia" rel="stylesheet" type="text/css"/>
-  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bowlby+One+SC|Calistoga|Patua+One|Righteous&display=swap" rel="stylesheet">
-  <title>Clue</title>
+    <meta charset="utf-8">
+    <link href="https://db.onlinewebfonts.com/c/c374d838a58029dec24540958fb76db4?family=Gallia" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Bowlby+One+SC|Calistoga|Patua+One|Righteous&display=swap" rel="stylesheet">
+    <title>Clue</title>
 </head>
 <body>
-  <div class='container'>
     <h1>Clue</h1>
 
     <div id='intro-page'>
-      <div id="introduction">
-        <h5>Welcome to Tudor Mansion. It is a dark and stormy night and the lights overhead flicker... a murder has just occured, Mr. Boddy's body was found outside the front door. Only the six dinner guests that were invited to the party are present, and all six of these guests have potential motive to get rid of the billionaire. Select a player below to move throughout the mansion and gather clues to help uncover the mystery at Tudor Mansion.</h5></div>
-        <div class='form-group'>
-          <form id='initial-form'>
-            <h4>Select a player:</h4>
-            <div class='grid select-character'>
-              <div class='radio'>
+        <p>Welcome to Tudor Mansion. It is a dark and stormy night and the lights overhead flicker... a murder has just occured, Mr. Boddy's body was found outside the front door. Only the six dinner guests that were invited to the party are present, and all six of these guests have potential motive to get rid of the billionaire. Select a player below to move throughout the mansion and gather clues to help uncover the mystery at Tudor Mansion.</h5>
+        <h3>Select a player:</p>
+        <form id='initial-form'>
+            <label>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/white.png" alt="Mrs. White">
-                <input id='mrs-white' type='radio' name='character' value='Mrs. White'>
-                <label for='mrs-white'>Mrs. White</label>
-              </div>
-              <div class='radio'>
+                <h3>Mrs. White</h3>
+                <input type='radio' name='character' value='Mrs. White'>
+            </label>
+            <label>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/peacock.png" alt="Mrs. Peacock">
-                <input id='mrs-peacock' type='radio' name='character' value='Mrs. Peacock'>
-                <label for='mrs-peacock'>Mrs. Peacock</label>
-              </div>
-              <div class='radio'>
+                <h3>Mrs. Peacock</h3>
+                <input type='radio' name='character' value='Mrs. Peacock'>
+            </label>
+            <label>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/green.png" alt="Mr. Green">
-                <input id='mr-green' type='radio' name='character' value='Mr. Green'>
-                <label for='mr-green'>Mr. Green</label>
-              </div>
-              <div class='radio'>
+                <h3>Mr. Green</h3>
+                <input type='radio' name='character' value='Mr. Green'>
+            </label>
+            <label>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/plum.png" alt="Prof Plum">
-                <input id='prof-plum' type='radio' name='character' value='Prof. Plum'>
-                <label for='prof-plum'>Professor Plum</label>
-              </div>
-              <div class='radio'>
+                <h3>Professor Plum</h3>
+                <input type='radio' name='character' value='Prof. Plum' required>
+            </label>
+            <label>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/mustard.png" alt="Colonel Mustard">
-                <input id='col-mustard' type='radio' name='character' value='Col. Mustard'>
-                <label for='col-mustard'>Colonel Mustard</label>
-              </div>
-              <div class='radio'>
+                <h3>Colonel Mustard</h3>
+                <input type='radio' name='character' value='Col. Mustard'>
+            </label>
+            <label>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/scarlet.png" alt="Ms. Scarlet">
-                <input id='ms-scarlet' type='radio' name='character' value='Ms. Scarlet'>
-                <label for='ms-scarlet'>Miss Scarlet</label>
-              </div>
-            </div>
-            <div class='center-div'>
-              <button type='submit' id='start-game'>Start Game</button>
-            </div>
-          </form>
-        </div>
-      </div>
+                <h3>Miss Scarlet</h3>
+                <input type='radio' name='character' value='Ms. Scarlet'>
+            </label>
+
+            <button type='submit'>Start Game</button>
+        </form>
     </div>
 
     <div id="gameboard">
-      <div class="wrapper container">
-        <!-- rooms to hide and show-->
-        <div class="box" id='room'>
-          <h2>ROOM TEXT</h2>
-          <div id="button-door">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfju_D-vz2QDlb25gpDYHTD_vk8KbZbPNwwBH8tkJRAJIR3DatLKnitmc&s">
-          </div>
-        </div>
-          <div class="box message-board">
-            <h5>You have encountered Miss Scarlet in the Hall. Ask a question to gain a new clue about the murder at Tudor Mansion.</h5>
-            <form id="inquiry-form">
-              <div class="center-div">
-                <h5>Was it</h5>
-                <select name="suspect">
-                  <option selected="selected">Suspect</option>
-                  <option value="white">Mrs. White</option>
-                  <option value="blue">Mrs. Peacock</option>
-                  <option value="green">Mr. Green</option>
-                  <option value="purple">Professor Plum</option>
-                  <option value="yellow">Colonel Mustard</option>
-                  <option value="red">Miss Scarlet</option>
-                </select>
-                <h5>in the</h5>
-                <select name="location">
-                  <option selected="selected">Location</option>
-                  <option value="study">Study</option>
-                  <option value="library">Library</option>
-                  <option value="lounge">Lounge</option>
-                  <option value="game room">Game Room</option>
-                  <option value="hall">Hall</option>
-                  <option value="dining room">Dining Room</option>
-                  <option value="conservatory">Conservatory</option>
-                  <option value="ballroom">Ballroom</option>
-                  <option value="kitchen">Kitchen</option>
-                </select>
-                <h5>with the</h5>
-                <select name="weapon">
-                  <option selected="selected">Weapon</option>
-                  <option value="revolver">Revolver</option>
-                  <option value="rope">Rope</option>
-                  <option value="lead pipe">Lead Pipe</option>
-                  <option value="knife">Knife</option>
-                  <option value="candlestick">Candlestick</option>
-                  <option value="wrench">Wrench</option>
-                </select>
-                <h5>?</h5>
-              </div>
-              <div class="center-div">
-                <button id="submit-inquiry" type="button">Ask</button>
-              </div>
-            </form>
-          </div>
-          <div class="box bottom-buttons">
-            <div class="gameboard-bottom">
-              <div class="center-div">
-                <button id='button-rules' type='button' name='button'>Rules</button>
-                <button id='button-checkClues' type='button' name='button'>Your Clues</button>
-                <button id='button-accuse' type='button' name='button'>Make Final Accusation</button>
-              </div>
+        <div class="wrapper container">
+            <!-- rooms to hide and show-->
+            <div class="box" id='room'>
+                <h2>ROOM TEXT</h2>
+                <div id="button-door">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfju_D-vz2QDlb25gpDYHTD_vk8KbZbPNwwBH8tkJRAJIR3DatLKnitmc&s">
+                </div>
             </div>
-          </div>
+            <div class="box message-board">
+                <h5>You have encountered Miss Scarlet in the Hall. Ask a question to gain a new clue about the murder at Tudor Mansion.</h5>
+                <form id="inquiry-form">
+                    <div class="center-div">
+                        <h5>Was it</h5>
+                        <select name="suspect">
+                            <option selected="selected">Suspect</option>
+                            <option value="white">Mrs. White</option>
+                            <option value="blue">Mrs. Peacock</option>
+                            <option value="green">Mr. Green</option>
+                            <option value="purple">Professor Plum</option>
+                            <option value="yellow">Colonel Mustard</option>
+                            <option value="red">Miss Scarlet</option>
+                        </select>
+                        <h5>in the</h5>
+                        <select name="location">
+                            <option selected="selected">Location</option>
+                            <option value="study">Study</option>
+                            <option value="library">Library</option>
+                            <option value="lounge">Lounge</option>
+                            <option value="game room">Game Room</option>
+                            <option value="hall">Hall</option>
+                            <option value="dining room">Dining Room</option>
+                            <option value="conservatory">Conservatory</option>
+                            <option value="ballroom">Ballroom</option>
+                            <option value="kitchen">Kitchen</option>
+                        </select>
+                        <h5>with the</h5>
+                        <select name="weapon">
+                            <option selected="selected">Weapon</option>
+                            <option value="revolver">Revolver</option>
+                            <option value="rope">Rope</option>
+                            <option value="lead pipe">Lead Pipe</option>
+                            <option value="knife">Knife</option>
+                            <option value="candlestick">Candlestick</option>
+                            <option value="wrench">Wrench</option>
+                        </select>
+                        <h5>?</h5>
+                    </div>
+                    <div class="center-div">
+                        <button id="submit-inquiry" type="button">Ask</button>
+                    </div>
+                </form>
+            </div>
+            <div class="box bottom-buttons">
+                <div class="gameboard-bottom">
+                    <div class="center-div">
+                        <button id='button-rules' type='button' name='button'>Rules</button>
+                        <button id='button-checkClues' type='button' name='button'>Your Clues</button>
+                        <button id='button-accuse' type='button' name='button'>Make Final Accusation</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div id='rules'>
+    <div id='rules'>
         <h2>The Rules of Clue:</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class='center-div'>
-          <button class='button-backToGame' type='button'>Back to Game</button>
+            <button class='button-backToGame' type='button'>Back to Game</button>
         </div>
-      </div>
+    </div>
 
     <div id='player-clues'>
-      <h2>Your Clues:</h2>
-      <div id='player-clues-deck' class='container'>
+        <h2>Your Clues:</h2>
+        <div id='player-clues-deck' class='container'>
 
-      </div>
+        </div>
         <div class='center-div'>
-          <button class='button-backToGame' type='button'>Proceed to Game</button>
+            <button class='button-backToGame' type='button'>Proceed to Game</button>
         </div>
     </div>
 
@@ -183,7 +175,7 @@
         </div>
       </form>
 
-      </div>
+    </div>
 
     <div id='final'>
       <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
@@ -194,5 +186,7 @@
       </div>
 
     </div>
-  </body>
-  </html>
+
+</div>
+</body>
+</html>
