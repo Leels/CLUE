@@ -134,56 +134,57 @@
     </div>
 
     <div id='accusation'>
-        <h2>Make an Accusation</h2>
-        <h5>WARNING: Be sure of your accusation!  If you are incorrect, you will lose the game.</h5>
-        <form id='accusation-form'>
-            <div class='center-div'>
-                <select id='suspect'>
-                    <option selected='selected'>Suspect</option>
-                    <option value='Mrs. White'>Mrs. White</option>
-                    <option value='Mrs. Peacock'>Mrs. Peacock</option>
-                    <option value='Mr. Green'>Mr. Green</option>
-                    <option value='Prof. Plum'>Professor Plum</option>
-                    <option value='Col. Mustard'>Colonel Mustard</option>
-                    <option value='Ms. Scarlet'>Miss Scarlet</option>
-                </select>
-                <select id='location'>
-                    <option selected='selected'>Location</option>
-                    <option value='Study'>Study</option>
-                    <option value='Library'>Library</option>
-                    <option value='Lounge'>Lounge</option>
-                    <option value='Billiard Room'>Billiard Room</option>
-                    <option value='Hall'>Hall</option>
-                    <option value='Dining Room'>Dining Room</option>
-                    <option value='Conservatory'>Conservatory</option>
-                    <option value='Ballroom'>Ballroom</option>
-                    <option value='Kitchen'>Kitchen</option>
-                </select>
-                <select id='weapon'>
-                    <option selected='selected'>Weapon</option>
-                    <option value='Revolver'>Revolver</option>
-                    <option value='Rope'>Rope</option>
-                    <option value='Lead Pipe'>Lead Pipe</option>
-                    <option value='Knife'>Knife</option>
-                    <option value='Candlestick'>Candlestick</option>
-                    <option value='Wrench'>Wrench</option>
-                </select>
-            </div>
-            <div class='center-div'>
-                <button id='submit-accusation' type='submit'>Submit Accusation</button>
-                <button class='button-backToGame' type='button'>Back to Game</button>
-            </div>
-        </form>
+      <h2>Make an Accusation</h2>
+      <h5>WARNING: Be sure of your accusation!  If you are incorrect, you will lose the game.</h5>
+      <form id='accusation-form'>
+        <div class='center-div'>
+          <select id='murderer'>
+            <option selected='selected'>Suspect</option>
+            <option value='Mrs. White'>Mrs. White</option>
+            <option value='Mrs. Peacock'>Mrs. Peacock</option>
+            <option value='Mr. Green'>Mr. Green</option>
+            <option value='Prof. Plum'>Professor Plum</option>
+            <option value='Col. Mustard'>Colonel Mustard</option>
+            <option value='Ms. Scarlet'>Miss Scarlet</option>
+          </select>
+          <select id='murder-loc'>
+            <option selected='selected'>Location</option>
+            <option value='Study'>Study</option>
+            <option value='Library'>Library</option>
+            <option value='Lounge'>Lounge</option>
+            <option value='Billiard Room'>Billiard Room</option>
+            <option value='Hall'>Hall</option>
+            <option value='Dining Room'>Dining Room</option>
+            <option value='Conservatory'>Conservatory</option>
+            <option value='Ballroom'>Ballroom</option>
+            <option value='Kitchen'>Kitchen</option>
+          </select>
+          <select id='murder-wep'>
+            <option selected='selected'>Weapon</option>
+            <option value='Revolver'>Revolver</option>
+            <option value='Rope'>Rope</option>
+            <option value='Lead Pipe'>Lead Pipe</option>
+            <option value='Knife'>Knife</option>
+            <option value='Candlestick'>Candlestick</option>
+            <option value='Wrench'>Wrench</option>
+          </select>
+        </div>
+        <div class='center-div'>
+          <button id='submit-accusation' type='submit'>Submit Accusation</button>
+          <button class='button-backToGame' type='button'>Back to Game</button>
+        </div>
+      </form>
 
     </div>
 
     <div id='final'>
-        <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
-        <h2 id='you-win-lose'>You Win!</h2>
-        <h3 id='game-outcome'>You guessed <span class="reveal-suspect"></span> in the <span class="reveal-room"></span> with the <span class="reveal-weapon"></span>.<br><br>Congratulations, you guessed the murder mystery!</h3>
-        <div class='center-div'>
-            <button id='play-again' type='button' name='button'>Play Again</button>
-        </div>
+      <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
+      <h2 id='you-win-lose'></h2>
+      <h3 id='game-outcome'></h3>
+      <div class='center-div'>
+        <button id='play-again' type='button' name='button'>Play Again</button>
+      </div>
+
     </div>
 
 </div>
