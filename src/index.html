@@ -8,8 +8,8 @@
     <title>Clue</title>
 </head>
 <body>
+  <div class="container">
   <h1>Clue</h1>
-
     <div id='intro-page'>
         <p>Welcome to Tudor Mansion. It is a dark and stormy night and the lights overhead flicker... a murder has just occured, Mr. Boddy's body was found outside the front door. Only the six dinner guests that were invited to the party are present, and all six of these guests have potential motive to get rid of the billionaire. Select a player below to move throughout the mansion and gather clues to help uncover the mystery at Tudor Mansion.</p>
         <h3>Select a player:</h3>
@@ -47,10 +47,6 @@
             <button type='submit' id='start-game'>Start Game</button>
         </form>
     </div>
-
-      <button type='submit' id='start-game'>Start Game</button>
-    </form>
-  </div>
 
     <div id="gameboard">
         <div class="wrapper">
@@ -115,6 +111,7 @@
                 </div>
             </div>
         </div>
+      </div>
 
         <div id='rules' class="box fancy-border">
             <h2>The Rules of Clue:</h2><br>
@@ -180,41 +177,15 @@
                     </div>
                 </form>
             </div>
-
         </div>
-
         <div id='final'>
-            <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
-            <h2 id='you-win-lose'>You Win!</h2>
-            <h3 id='game-outcome'>You guessed <span class="reveal-suspect"></span> in the <span class="reveal-room"></span> with the <span class="reveal-weapon"></span>.<br><br>Congratulations, you guessed the murder mystery!</h3>
-            <div class='center-div'>
-                <button id='play-again' type='button' name='button' value="Reset" onClick="window.location.reload()">Play Again</button>
+          <h2 id='you-win-lose'></h2>
+          <h3 id='game-outcome'></h3>
+          <div class='center-div'>
+              <button id='play-again' type='button' name='button' value="Reset" onClick="window.location.reload()">Play Again</button>
             </div>
-            <div class='center-div'>
-                <button id='submit-accusation' type='submit'>Submit Accusation</button>
-                <button class='button-backToGame' type='button'>Back to Game</button>
-            </div>
-        </form>
 
     </div>
-
-    <div id='final'>
-        <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
-        <h2 id='you-win-lose'></h2>
-        <h3 id='game-outcome'></h3>
-        <div class='center-div'>
-            <button id='play-again' type='button' name='button'>Play Again</button>
-        </div>
-
-  <div id='final'>
-    <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
-    <h2 id='you-win-lose'></h2>
-    <h3 id='game-outcome'></h3>
-    <div class='center-div'>
-      <button id='play-again' type='button' name='button'>Play Again</button>
-    </div>
-
-  </div>
 
 </div>
 </body>

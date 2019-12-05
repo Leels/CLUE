@@ -5,14 +5,14 @@ import './css/styles.css';
 import  { Game } from './game.js';
 
 $(document).ready(function() {
-    const colors = {
-        white: '142, 69, 133',
-        blue: 0,
-        green: 0,
-        purple: 0,
-        yellow: 0,
-        red: 0
-    }
+    // const colors = {
+    //     white: '142, 69, 133',
+    //     blue: 0,
+    //     green: 0,
+    //     purple: 0,
+    //     yellow: 0,
+    //     red: 0
+    // }
     $('#rules').hide();
     $('#player-clues').hide();
     $('#gameboard').hide();
