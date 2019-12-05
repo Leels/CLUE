@@ -55,8 +55,8 @@ h1 {
 #intro-page p {
     text-align: justify;
     text-indent: 2rem;
-    font-style: italic;
 }
+
 #initial-form {
     display: grid;
     grid-template-columns: 10rem 10rem 10rem;
@@ -64,6 +64,7 @@ h1 {
     grid-row-gap: 1rem;
     grid-column-gap: 4rem;
 }
+
 #initial-form label {
     display: flex;
     flex-direction: column;
@@ -71,11 +72,7 @@ h1 {
     justify-content: center;
 
     margin: 0;
-    padding: 0.75rem;
-
-    background-color: white;
-    border: 3px solid black;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 #initial-form label img{
     max-height: 100%;
@@ -198,14 +195,7 @@ h1 {
   border: 45px solid  #4d2600;
   border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 25;
 }
-#room button {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: Arial;
-  font-size: 50%;
-  text-align: center;
-}
+
 #room img {
   position: absolute;
   right:0;
@@ -225,7 +215,6 @@ h1 {
 .study h2 {
     background-color: #e69d00;
     color: #4d2600;
-
 }
 
 .library {
@@ -293,6 +282,20 @@ h1 {
   grid-row: 3 ;
   background-color: #00004d;
   color: #fff7e6;
+}
+
+.bottom-buttons button {
+  background-color: #00004d;
+  color: #fff7e6;
+  border: none;
+  font-size: 125%;
+}
+
+.ask-button button {
+  background-color: #B88846;
+  color: #fff7e6;
+  border: none;
+  font-size: 125%;
 }
 
 .fancy-border {
