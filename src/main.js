@@ -4,8 +4,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import  { Game } from './game.js';
 
+// function playerCards (playerCharacter, game) {
+//     let playerCards = [];
+//     for (let i=0; i<game.suspects.length; i++) {
+//         if (game.suspects[i].name === playerCharacter) {
+//             playerCards = (game.suspects[i].knowledge);
+//         }
+//     }
+//     let playCardsFileNames = playerCards.map(function(i) {
+//         return ('https://raw.githubusercontent.com/Leels/CLUE/master/assets/cards/'
+//             + i.toLowerCase().replace(" ", "-").concat(".jpg"));
+//     });
+//     return playCardsFileNames;
+//
+// }
+
+
 $(document).ready(function() {
-    let game;
     $('#rules').hide();
     $('#player-clues').hide();
     $('#gameboard').hide();
@@ -17,17 +32,24 @@ $(document).ready(function() {
         e.preventDefault();
 
         const playerCharacter = $('input[name=character]:checked').val();
+<<<<<<< HEAD
+        let game = new Game(playerCharacter);
+        $('#intro').hide();
+=======
         game = new Game(playerCharacter);
 
         $('#intro-page').hide();
+>>>>>>> master
         $('#gameboard').show();
-        console.log(game.caseFile);
         doTurn(game, 0);
     });
 });
 
 function doTurn(game, i) {
+<<<<<<< HEAD
+=======
     console.log(`${game.suspects[i].name} is taking their turn.`);
+>>>>>>> master
     const currentPlayer = game.suspects[i];
     const j = (game.suspects[i+1] ? i + 1 : 0);
 
@@ -65,9 +87,13 @@ function rumination(currentPlayer) {
     $('#button-checkClues').click(() => {
         $('#gameboard').hide();
         $('#player-clues').show();
-        currentPlayer.knowledge.forEach((know, i) => {
-            const cardName = know.replace(' ', '-').toLowerCase();
-            $(`#card${i+1} img`).attr('src', 'https://raw.githubusercontent.com/Leels/CLUE/master/src/styles/images/cards/room-study.jpg');
+        currentPlayer.knowledge.forEach((know) => {
+            const cardFileName = 'https://raw.githubusercontent.com/Leels/CLUE/master/assets/cards/' + know.replace(' ', '-').toLowerCase().concat(".jpg");
+            $('#player-clues-deck').append(`
+                <div class="display-card">
+                    <img src="${cardFileName}">
+                </div>
+            `)
         });
         backToGameboard();
     });
