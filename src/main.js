@@ -120,6 +120,7 @@ function accusation(game, currentPlayer) {
             e.preventDefault();
 
             const guess = [$('#murderer').val(), $('#murder-loc').val(), $('#murder-wep').val()];
+            console.log(guess);
             $('#murderer').val('');
             $('#murder-loc').val('');
             $('#murder-wep').val('');
@@ -129,7 +130,7 @@ function accusation(game, currentPlayer) {
                 $('#you-win-lose').append('You Win!');
                 $('#game-outcome').append(`${guess[0]} killed Mr. Boddy with the ${guess[2].toLowerCase()} in the ${guess[1].toLowerCase()}.`);
             } else {
-                $('#you-win-lose').append('You Loose!');
+                $('#you-win-lose').append('You Lose!');
                 $('#game-outcome').append(`You guessed ${guess[0]} killed Mr. Boddy with the ${guess[2].toLowerCase()} in the ${guess[1].toLowerCase()}...<br><br>BUT in fact, ${game.caseFile[0]} killed Mr. Boddy with the ${game.caseFile[2].toLowerCase()} in the ${game.caseFile[1].toLowerCase()}.`);
             }
 
