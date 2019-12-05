@@ -10,11 +10,12 @@
   <div class='container'>
     <h1>Clue</h1>
 
-    <div id='intro'>
-      <h5>Welcome to Tudor Mansion. It is a dark and stormy night and the lights overhead flicker... a murder has just occured, Mr. Boddy's body was found outside the front door. Only the six dinner guests that were invited to the party are present, and all six of these guests have potential motive to get rid of the billionaire. Select a player below to move throughout the mansion and gather clues to help uncover the mystery at Tudor Mansion.</h5>
+    <div id='intro-page'>
+      <div id="introduction">
+       <h5>Welcome to Tudor Mansion. It is a dark and stormy night and the lights overhead flicker... a murder has just occured, Mr. Boddy's body was found outside the front door. Only the six dinner guests that were invited to the party are present, and all six of these guests have potential motive to get rid of the billionaire. Select a player below to move throughout the mansion and gather clues to help uncover the mystery at Tudor Mansion.</h5></div>
       <div class='form-group'>
         <form id='initial-form'>
-          <h4>Choose a player:</h4>
+          <h4>Select a player:</h4>
           <div class='grid select-character'>
             <div class='radio'>
               <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/white.png" alt="Mrs. White">
@@ -89,110 +90,100 @@
 </div>
 </div>
 
-<div id="gameboard">
+<div id="gameboard" class="container">
   <div class="wrapper">
-    <div class="box heading">
-      <h2>Clue</h2>
-    </div>
-  <!-- rooms to hide and show-->
+    <!-- rooms to hide and show-->
     <div class="box rooms fancy-border" id="study">
-        <h2>Study</h2>
-        <img src="" alt="">
+      <h2>Study</h2>
+      <div class="row">
+      <button id='to-lounge' type='button'>To the Lounge</button>
+      <button id='to-lounge' type='button'>To the Lounge</button>
+    </div>
     </div>
     <div class="box rooms fancy-border" id="library">
-        <h2>Library</h2>
-        <img src="" alt="">
+      <h2>Library</h2>
+      <img src="" alt="">
     </div>
     <div class="box rooms fancy-border" id="lounge">
-        <h2>Lounge</h2>
-        <img src="" alt="">
+      <h2>Lounge</h2>
+      <img src="" alt="">
     </div>
     <div class="box rooms fancy-border" id="billiard-room">
-        <h2>Billiard Room</h2>
-        <img src="" alt="">
+      <h2>Billiard Room</h2>
+      <img src="" alt="">
     </div>
     <div class="box rooms fancy-border" id="hall">
-        <h2>Hall</h2>
-        <img src="" alt="">
+      <h2>Hall</h2>
+      <img src="" alt="">
     </div>
     <div class="box rooms fancy-border" id="dining-room">
-        <h2>Dining Room</h2>
-        <img src="" alt="">
+      <h2>Dining Room</h2>
+      <img src="" alt="">
     </div>
     <div class="box rooms fancy-border" id="conservatory">
-        <h2>Conservatory</h2>
-        <img src="" alt="">
+      <h2>Conservatory</h2>
+      <img src="" alt="">
     </div>
     <div class="box rooms fancy-border" id="ballroom">
-        <h2>Ballroom</h2>
-        <img src="" alt="">
+      <h2>Ballroom</h2>
+      <img src="" alt="">
     </div>
     <div class="box rooms fancy-border" id="kitchen">
-        <h2>Kitchen</h2>
-        <img src="" alt="">
+      <h2>Kitchen</h2>
+      <img src="" alt="">
     </div>
-  <!-- end rooms -->
+    <!-- end rooms -->
 
     <div class="box message-board">
-      <h2>Message Board</h2>
+      <h2>Make an Inquiry:</h2>
+      <form id="inquiry-form">
+        <div class="center-div">
+          <select name="suspect">
+            <option selected="selected">Suspect</option>
+            <option value="white">Mrs. White</option>
+            <option value="blue">Mrs. Peacock</option>
+            <option value="green">Mr. Green</option>
+            <option value="purple">Professor Plum</option>
+            <option value="yellow">Colonel Mustard</option>
+            <option value="red">Miss Scarlet</option>
+          </select>
+          <select name="weapon">
+            <option selected="selected">Weapon</option>
+            <option value="revolver">Revolver</option>
+            <option value="rope">Rope</option>
+            <option value="lead pipe">Lead Pipe</option>
+            <option value="knife">Knife</option>
+            <option value="candlestick">Candlestick</option>
+            <option value="wrench">Wrench</option>
+          </select>
+          <select name="location">
+            <option selected="selected">Location</option>
+            <option value="study">Study</option>
+            <option value="library">Library</option>
+            <option value="lounge">Lounge</option>
+            <option value="game room">Game Room</option>
+            <option value="hall">Hall</option>
+            <option value="dining room">Dining Room</option>
+            <option value="conservatory">Conservatory</option>
+            <option value="ballroom">Ballroom</option>
+            <option value="kitchen">Kitchen</option>
+          </select>
+        </div>
+        <div class="center-div">
+          <button id="submit-inquiry" type="button">Submit Inquiry</button>
+        </div>
+      </form>
     </div>
     <div class="box bottom-buttons">
       <div class="gameboard-bottom">
         <div class="center-div">
           <button id='button-rules' type='button' name='button'>Rules</button>
           <button id='button-checkClues' type='button' name='button'>Your Clues</button>
-          <button id='talk-to-button' type='button' name='button'>Make Inquiry</button>
           <button id='button-accuse' type='button' name='button'>Make Accusation</button>
-          <!-- The talk-to-button content should be populated via javascript upon eacn gameboard  -->
         </div>
       </div>
     </div>
   </div>
-
-
-
-  <div id="inquiry">
-    <h2>Make an Inquiry</h2>
-    <form id="inquiry-form">
-      <div class="center-div">
-        <select name="suspect">
-          <option selected="selected">Suspect</option>
-          <option value="white">Mrs. White</option>
-          <option value="blue">Mrs. Peacock</option>
-          <option value="green">Mr. Green</option>
-          <option value="purple">Professor Plum</option>
-          <option value="yellow">Colonel Mustard</option>
-          <option value="red">Miss Scarlet</option>
-        </select>
-        <select name="weapon">
-          <option selected="selected">Weapon</option>
-          <option value="revolver">Revolver</option>
-          <option value="rope">Rope</option>
-          <option value="lead pipe">Lead Pipe</option>
-          <option value="knife">Knife</option>
-          <option value="candlestick">Candlestick</option>
-          <option value="wrench">Wrench</option>
-        </select>
-        <select name="location">
-          <option selected="selected">Location</option>
-          <option value="study">Study</option>
-          <option value="library">Library</option>
-          <option value="lounge">Lounge</option>
-          <option value="game room">Game Room</option>
-          <option value="hall">Hall</option>
-          <option value="dining room">Dining Room</option>
-          <option value="conservatory">Conservatory</option>
-          <option value="ballroom">Ballroom</option>
-          <option value="kitchen">Kitchen</option>
-        </select>
-      </div>
-      <div class="center-div">
-        <button id="submit-inquiry" type="button">Submit Inquiry</button>
-        <button class="back-to-gameboard" type="button">Back to Game</button>
-      </div>
-    </form>
-
-
 
     <div id='accusation'>
       <h2>Make an Accusation</h2>
@@ -241,7 +232,7 @@
     <div id='final'>
       <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
       <h2 id='you-win-lose'>You Win!</h2>
-      <h3 id='game-outcome'>You guessed Mr Peacock killed him in the billards room with the rope.<br><br>Congratulations!</h3>
+      <h3 id='game-outcome'>You guessed <span class="reveal-suspect"></span> in the <span class="reveal-room"></span> with the <span class="reveal-weapon"></span>.<br><br>Congratulations, you guessed the murder mystery!</h3>
       <div class='center-div'>
         <button id='play-again' type='button' name='button'>Play Again</button>
       </div>

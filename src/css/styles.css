@@ -28,6 +28,10 @@ h1 {
   margin: 50px;
 }
 
+#introduction {
+  padding: 50px;
+}
+
 .center-div {
   /* margin: 0 auto;
   display: block; */
@@ -37,7 +41,6 @@ h1 {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 30px;
   text-align: center;
   justify-items: center;
 }
@@ -54,37 +57,27 @@ h1 {
 
 .radio {
   border: solid;
-  padding-top: 0px;
   width: 150px;
   border-radius: 5px;
+  margin-top: 30px;
 }
 
 /*gameboard*/
 
 .wrapper {
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 65% 35%;
-  grid-template-rows: 100px 400px 200px;
+  grid-gap: 10px;;
+  grid-template-columns: 64% 35%;
   color: #444;
 }
 
 .box {
-  background-color: #003366;
+  background-color: #00004d;
   color: #fff7e6;
   border-radius: 5px;
   padding: 20px;
   font-size: 150%;
 
-}
-
-.heading {
-  grid-column: 1 / span 3;
-}
-
-.heading h2 {
-  font-size: 200%;
-  text-align: center;
 }
 
 .rooms {
@@ -94,7 +87,10 @@ h1 {
   font-size: 200%;
   text-align: center;
   color: #B88846;
+}
 
+#inquiry-form {
+  padding-top: 40px;
 }
 
 .rooms h2 {
@@ -104,47 +100,63 @@ h1 {
   text-align: center;
 }
 
+.rooms button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial;
+  font-size: 50%;
+  text-align: center;
+}
+
 /* room colors */
 #study {
+  /* display: none; */
   background-color: #e69d00;
   color: #4d2600;
   padding: 100px 0;
 }
 #library {
+  display: none;
   background-color: #800000;
   padding: 100px 0;
 }
 #lounge {
+  display: none;
   background-color: #b30059;
-  /* color: #fff7e6; */
   padding: 100px 0;
 }
 #billiard-room {
+  display: none;
   background-color: #004d00;
   padding: 100px 0;
 }
 #hall {
+  /* display: none; */
   background-color: #660000;
   padding: 100px 0;
 }
 #dining-room {
+  /* display: none; */
   background-color: #99ccff;
   padding: 100px 0;
 }
 #conservatory {
+  display: none;
   background-color: #ccccff;
   padding: 100px 0;
 }
 #ballroom {
+  display: none;
   background-color: #993333;
   padding: 100px 0;
 }
 #kitchen {
+  /* display: none; */
   background-color: #e6e600;
   padding: 100px 0;
 }
 /* end room colors */
-
 .message-board {
   grid-column: 2 span 2;
   grid-row: 2 / span 1;
