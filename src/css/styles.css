@@ -2,6 +2,7 @@
 
 body {
   background-color: #fff7e6;
+  font-family: 'Open Sans', sans-serif;
 }
 button, select, h1, .radio {
   background-color: white;
@@ -30,6 +31,16 @@ h1 {
   margin-right: auto;
   width: 80%;
 }
+
+.center-div {
+  text-align: center;
+}
+#warning {
+  color: #b30000;
+  font-style: bold;
+  font-size: 120%;
+}
+
 
 #intro-page {
     display: flex;
@@ -113,16 +124,13 @@ h1 {
   background-color: #00004d;
   color: #fff7e6;
   border-radius: 5px;
-  border: solid #00004d;
   padding: 20px;
-  font-size: 150%;
 }
 
 .box button {
   border-radius: 2px;
   border: solid 1px black;
   box-shadow: none;
-  font-size: 80%;
 }
 
 #inquiry-form {
@@ -138,11 +146,12 @@ h1 {
     text-align: center;
     color: #B88846;
     padding: 100px 0;
+    border: solid #00004d;
 }
 #room h2 {
   display: block;
   font-family: Gallia;
-  font-size: 200%;
+  font-size: 140%;
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -166,9 +175,13 @@ h1 {
   height: auto;
 }
 
+#button-door {
+  cursor: pointer;
+}
+
 /* room colors */
 .study {
-    background-image: url("https://static.wixstatic.com/media/05bd2f_03d542e15510496a85568a8449df77cf~mv2_d_2520_2520_s_4_2.jpg/v1/fill/w_2520%2Ch_2520%2Cal_c%2Cq_90/file.jpg");
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROVRcHS5HJTMjMV2sbhlRLcx0BR8U3UFIxqIzVN-YYbpPx307e&s");
 }
 .study h2 {
     background-color: #e69d00;
@@ -206,7 +219,6 @@ h1 {
 
 .dining-room {
   background-image: url("https://beautifullinens.com/wp-content/uploads/2019/08/Modespitze-Plauen-MORITZBURG-White-Embroidered-Lace-Square-Tablecloth-Table-Topper-38in-96cm-Main-600x448.jpg");
-  padding: 100px 0;
 }
 .dining-room h2 {
   background-color: #99ccff;
@@ -217,7 +229,6 @@ h1 {
 }
 .conservatory h2 {
   background-color: #ccccff;
-  font-size: 100%;
 }
 
 .ballroom {
@@ -233,8 +244,6 @@ h1 {
 .kitchen h2 {
   background-color: #ffdb4d;
 }
-
-
 /* end room colors */
 .message-board {
   grid-column: 2 span 2;
@@ -243,6 +252,13 @@ h1 {
 .bottom-buttons {
   grid-column: 1 / span 3;
   grid-row: 3 ;
+  background-color: #00004d;
+  color: #fff7e6;
+}
+
+.fancy-border {
+  border: 45px solid  #4d2600;
+  border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23B88846' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23B88846'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 25;
 }
 
 /* player-clues div */
