@@ -5,14 +5,6 @@ import './css/styles.css';
 import  { Game } from './game.js';
 
 $(document).ready(function() {
-    // const colors = {
-    //     white: '142, 69, 133',
-    //     blue: 0,
-    //     green: 0,
-    //     purple: 0,
-    //     yellow: 0,
-    //     red: 0
-    // }
     $('#rules').hide();
     $('#player-clues').hide();
     $('#gameboard').hide();
@@ -22,10 +14,7 @@ $(document).ready(function() {
 
     $('form#initial-form').submit(e => {
         e.preventDefault();
-
-        const playerCharacter = $('input[name=character]:checked').val();
-        const game = new Game(playerCharacter);
-
+        const game = new Game($('input[name=character]:checked').val());
         $('#intro-page').hide();
         $('#gameboard').show();
         doTurn(game, 0);
@@ -33,14 +22,11 @@ $(document).ready(function() {
 });
 
 function doTurn(game, i) {
-    console.log(`${game.suspects[i].name} is taking their turn.`);
-
     const currentPlayer = game.suspects[i];
     const j = (game.suspects[i+1] ? i + 1 : 0);
 
     if (currentPlayer.isHuman) {
         displayRoom(currentPlayer.location);
-
         ruleCheck();
         relocation(currentPlayer);
         rumination(currentPlayer);
@@ -67,7 +53,6 @@ function relocation(currentPlayer) {
     });
 }
 
-
 function rumination(currentPlayer) {
     $('#button-checkClues').click(() => {
         $('#gameboard').hide();
@@ -75,9 +60,9 @@ function rumination(currentPlayer) {
         const playerCardsHtml = currentPlayer.knowledge.map((know) => {
             const cardFileName = 'https://raw.githubusercontent.com/Leels/CLUE/master/assets/cards/' + know.replace(' ', '-').toLowerCase().concat(".jpg");
             return `
-                <div class="display-card">
-                    <img src="${cardFileName}">
-                </div>
+            <div class="display-card">
+            <img src="${cardFileName}">
+            </div>
             `;
         });
         $('#player-clues-deck').html(playerCardsHtml);
@@ -86,27 +71,21 @@ function rumination(currentPlayer) {
 }
 
 function inquisition(game, currentPlayer, j) {
-    $('#button-inquire').click(() => {
-        $('#gameboard').hide();
-        $('#inquiry').show();
-        backToGameboard();
+    $('#inquiry-form').submit(e => {
+        e.preventDefault();
 
-        $('#inquiry-form').submit(e => {
-            e.preventDefault();
+        const guess = [$('#suspect').val(), $('#location').val(), $('#weapon').val()];
+        $('#murderer').val('');
+        $('#murder-loc').val('');
+        $('#murder-wep').val('');
 
-            const guess = [$('#suspect').val(), $('#location').val(), $('#weapon').val()];
-            $('#murderer').val('');
-            $('#murder-loc').val('');
-            $('#murder-wep').val('');
+        const result = currentPlayer.inquire(game.suspects[j], guess);
+        alert(result);
 
-            const result = currentPlayer.inquire(game.suspects[j], guess);
-            alert(result);
-
-            $('#inquiry').hide();
-            $('#gameboard').show();
-            $('#inquiry-form').reset();
-            doTurn(game, j);
-        });
+        $('#inquiry').hide();
+        $('#gameboard').show();
+        $('#inquiry-form').reset();
+        doTurn(game, j);
     });
 }
 
@@ -120,6 +99,7 @@ function accusation(game, currentPlayer) {
             e.preventDefault();
 
             const guess = [$('#murderer').val(), $('#murder-loc').val(), $('#murder-wep').val()];
+            // console.log(guess);
             $('#murderer').val('');
             $('#murder-loc').val('');
             $('#murder-wep').val('');
@@ -129,7 +109,7 @@ function accusation(game, currentPlayer) {
                 $('#you-win-lose').append('You Win!');
                 $('#game-outcome').append(`${guess[0]} killed Mr. Boddy with the ${guess[2].toLowerCase()} in the ${guess[1].toLowerCase()}.`);
             } else {
-                $('#you-win-lose').append('You Loose!');
+                $('#you-win-lose').append('You Lose!');
                 $('#game-outcome').append(`You guessed ${guess[0]} killed Mr. Boddy with the ${guess[2].toLowerCase()} in the ${guess[1].toLowerCase()}...<br><br>BUT in fact, ${game.caseFile[0]} killed Mr. Boddy with the ${game.caseFile[2].toLowerCase()} in the ${game.caseFile[1].toLowerCase()}.`);
             }
 
@@ -145,7 +125,6 @@ function backToGameboard() {
         $('#rules').hide();
         $('#player-clues').hide();
         $('#accusation').hide();
-        $('#inquiry').hide();
         $('#gameboard').show();
     });
 }
@@ -154,7 +133,6 @@ function displayRoom(room) {
     function randomPlayer() {
         const players = ['Mrs. White', 'Mrs. Peacock', 'Mr. Green', 'Prof. Plum', 'Col. Mustard', 'Ms. Scarlet'];
         return players[Math.floor(Math.random()*6)];
-
     }
     $('#current-player-in-room').html(randomPlayer());
     $('#current-room').html(room);
