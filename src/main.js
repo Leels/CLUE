@@ -32,32 +32,38 @@ $(document).ready(function() {
         e.preventDefault();
 
         const playerCharacter = $('input[name=character]:checked').val();
+<<<<<<< HEAD
         let game = new Game(playerCharacter);
         $('#intro').hide();
+=======
+        game = new Game(playerCharacter);
+
+        $('#intro-page').hide();
+>>>>>>> master
         $('#gameboard').show();
         doTurn(game, 0);
     });
 });
 
 function doTurn(game, i) {
+<<<<<<< HEAD
+=======
+    console.log(`${game.suspects[i].name} is taking their turn.`);
+>>>>>>> master
     const currentPlayer = game.suspects[i];
     const j = (game.suspects[i+1] ? i + 1 : 0);
+
     if (currentPlayer.isHuman) {
-        ruleCheck(); //DONE
-        // relocation(currentPlayer);
+        displayRoom(currentPlayer.location);
+
+        ruleCheck();
+        relocation(currentPlayer);
         rumination(currentPlayer);
         inquisition(game, currentPlayer, j);
         accusation(game, currentPlayer, j);
     }
     else {
         doTurn(game, j);
-        // setTimeout( () => {
-        //     currentPlayer.moveTo();
-        // }, 1000);
-        // setTimeout( () => {
-        //     currentPlayer.accuse();
-        //     doTurn(j);
-        // }, 2000);
     }
 }
 
@@ -69,26 +75,13 @@ function ruleCheck() {
     });
 }
 
-function backToGameboard() {
-    $('.button-backToGame').click(() => {
-        $('#rules').hide();
-        $('#player-clues').hide();
-        $('#accusation').hide();
-        $('#inquiry').hide();
-        $('#gameboard').show();
+function relocation(currentPlayer) {
+    $('#button-door').click(() => {
+        currentPlayer.moveTo();
+        displayRoom(currentPlayer.location);
     });
 }
 
-// function relocation(currentPlayer) {
-//     $('#button-checkClues').click(() => {
-//
-//     });
-//     //when clicked
-//     //hide other divs
-//     //show change room div
-//     //when new room is clicked, run player.moveTo(newRoom);
-//     //hide change room div
-// }
 
 function rumination(currentPlayer) {
     $('#button-checkClues').click(() => {
@@ -148,9 +141,24 @@ function accusation(game, currentPlayer) {
             const gameOver = currentPlayer.accuse(game.caseFile, guess);
             alert(gameOver);
 
-            // $('#accusation-form').reset();
             $('#accusation').hide();
             $('#final').show();
+            $('#accusation-form').reset();
         });
     });
+}
+
+function backToGameboard() {
+    $('.button-backToGame').click(() => {
+        $('#rules').hide();
+        $('#player-clues').hide();
+        $('#accusation').hide();
+        $('#inquiry').hide();
+        $('#gameboard').show();
+    });
+}
+
+function displayRoom(room) {
+    $('#room').removeClass().addClass(room.replace(' ', '-').toLowerCase());
+    $('#room h2').text(room);
 }
