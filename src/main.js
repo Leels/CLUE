@@ -64,14 +64,15 @@ function rumination(currentPlayer) {
     $('#button-checkClues').click(() => {
         $('#gameboard').hide();
         $('#player-clues').show();
-        currentPlayer.knowledge.forEach((know) => {
+        const playerCardsHtml = currentPlayer.knowledge.map((know) => {
             const cardFileName = 'https://raw.githubusercontent.com/Leels/CLUE/master/assets/cards/' + know.replace(' ', '-').toLowerCase().concat(".jpg");
-            $('#player-clues-deck').append(`
+            return `
                 <div class="display-card">
                     <img src="${cardFileName}">
                 </div>
-            `)
+            `;
         });
+        $('#player-clues-deck').html(playerCardsHtml);
         backToGameboard();
     });
 }
@@ -116,11 +117,17 @@ function accusation(game, currentPlayer) {
             $('#murder-wep').val('');
 
             const gameOver = currentPlayer.accuse(game.caseFile, guess);
-            alert(gameOver);
+            if (gameOver) {
+                $('#you-win-lose').append('You Win!');
+                $('#game-outcome').append(`${guess[0]} killed Mr. Boddy with the ${guess[2].toLowerCase()} in the ${guess[1].toLowerCase()}.`);
+            } else {
+                $('#you-win-lose').append('You Loose!');
+                $('#game-outcome').append(`You guessed ${guess[0]} killed Mr. Boddy with the ${guess[2].toLowerCase()} in the ${guess[1].toLowerCase()}...<br><br>BUT in fact, ${game.caseFile[0]} killed Mr. Boddy with the ${game.caseFile[2].toLowerCase()} in the ${game.caseFile[1].toLowerCase()}.`);
+            }
 
             $('#accusation').hide();
             $('#final').show();
-            $('#accusation-form').reset();
+            $('#accusation-form').reset(); //showing error
         });
     });
 }
@@ -136,6 +143,13 @@ function backToGameboard() {
 }
 
 function displayRoom(room) {
+    function randomPlayer() {
+        const players = ['Mrs. White', 'Mrs. Peacock', 'Mr. Green', 'Prof. Plum', 'Col. Mustard', 'Ms. Scarlet'];
+        return players[Math.floor(Math.random()*6)];
+
+    }
+    $('#current-player-in-room').html(randomPlayer());
+    $('#current-room').html(room);
     $('#room').removeClass().addClass(room.replace(' ', '-').toLowerCase());
     $('#room h2').text(room);
 }

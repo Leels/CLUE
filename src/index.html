@@ -8,7 +8,6 @@
   <title>Clue</title>
 </head>
 <body>
-  <div class='container'>
     <h1>Clue</h1>
 
     <div id='intro-page'>
@@ -21,30 +20,30 @@
             <div class='grid select-character'>
               <div class='radio'>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/white.png" alt="Mrs. White">
-                <input id='mrs-white' type='radio' name='character' value='Mrs. White'>
-                <label for='mrs-white'>Mrs. White</label>
-              </div>
-              <div class='radio'>
+                <h3>Mrs. White</h3>
+                <input type='radio' name='character' value='Mrs. White'>
+            </label>
+            <label>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/peacock.png" alt="Mrs. Peacock">
-                <input id='mrs-peacock' type='radio' name='character' value='Mrs. Peacock'>
-                <label for='mrs-peacock'>Mrs. Peacock</label>
-              </div>
-              <div class='radio'>
+                <h3>Mrs. Peacock</h3>
+                <input type='radio' name='character' value='Mrs. Peacock'>
+            </label>
+            <label>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/green.png" alt="Mr. Green">
-                <input id='mr-green' type='radio' name='character' value='Mr. Green'>
-                <label for='mr-green'>Mr. Green</label>
-              </div>
-              <div class='radio'>
+                <h3>Mr. Green</h3>
+                <input type='radio' name='character' value='Mr. Green'>
+            </label>
+            <label>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/plum.png" alt="Prof Plum">
-                <input id='prof-plum' type='radio' name='character' value='Prof. Plum'>
-                <label for='prof-plum'>Professor Plum</label>
-              </div>
-              <div class='radio'>
+                <h3>Professor Plum</h3>
+                <input type='radio' name='character' value='Prof. Plum' required>
+            </label>
+            <label>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/mustard.png" alt="Colonel Mustard">
-                <input id='col-mustard' type='radio' name='character' value='Col. Mustard'>
-                <label for='col-mustard'>Colonel Mustard</label>
-              </div>
-              <div class='radio'>
+                <h3>Colonel Mustard</h3>
+                <input type='radio' name='character' value='Col. Mustard'>
+            </label>
+            <label>
                 <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/players/scarlet.png" alt="Ms. Scarlet">
                 <input id='ms-scarlet' type='radio' name='character' value='Ms. Scarlet'>
                 <label for='ms-scarlet'>Miss Scarlet</label>
@@ -120,9 +119,8 @@
                 <button id='button-accuse' type='button' name='button'>Make Final Accusation</button>
               </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
       <div id='rules' class="box fancy-border">
         <h2>The Rules of Clue:</h2><br>
@@ -130,15 +128,15 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class='center-div'>
-          <button class='button-backToGame' type='button'>Back to Game</button>
+            <button class='button-backToGame' type='button'>Back to Game</button>
         </div>
-      </div>
+    </div>
 
     <div id='player-clues' class="box fancy-border">
       <h2>Your Clues:</h2>
       <div id='player-clues-deck'>
 
-      </div>
+        </div>
         <div class='center-div'>
           <button class='button-backToGame' type='button'>Back to Game</button>
         </div>
@@ -198,8 +196,24 @@
         <div class='center-div'>
           <button id='play-again' type='button' name='button' value="Reset" onClick="window.location.reload()">Play Again</button>
         </div>
+        <div class='center-div'>
+          <button id='submit-accusation' type='submit'>Submit Accusation</button>
+          <button class='button-backToGame' type='button'>Back to Game</button>
+        </div>
+      </form>
+
+    </div>
+
+    <div id='final'>
+      <!-- you-win-lose and game-outcome will be populated via JS based on the outcome of the game.  The below content is just an example. -->
+      <h2 id='you-win-lose'></h2>
+      <h3 id='game-outcome'></h3>
+      <div class='center-div'>
+        <button id='play-again' type='button' name='button'>Play Again</button>
       </div>
 
     </div>
-  </body>
-  </html>
+
+</div>
+</body>
+</html>
