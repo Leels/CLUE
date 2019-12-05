@@ -9,6 +9,7 @@
 * Player selects a Character.
 * Player receives three random Clue Cards.
 * Player is placed in random room in mansion.
+* Player may navigate throughout mansion by clicking on room door.
 * Player may view rules and Clue Cards anytime throughout their turn.
 * Player may make mystery inquiry with one suspect, weapon and room. Game compares inquiry to other suspects' clues. If another suspect has a clue they reveal one clue to Player.
 * Player may make accusation with one suspect, weapon and room. Game compares inquiry to the set Murder Mystery. Game compares inquiry to other suspects' clues. If correct Player wins, if not player loses and game is over.
