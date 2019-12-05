@@ -4,22 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import  { Game } from './game.js';
 
-// function playerCards (playerCharacter, game) {
-//     let playerCards = [];
-//     for (let i=0; i<game.suspects.length; i++) {
-//         if (game.suspects[i].name === playerCharacter) {
-//             playerCards = (game.suspects[i].knowledge);
-//         }
-//     }
-//     let playCardsFileNames = playerCards.map(function(i) {
-//         return ('https://raw.githubusercontent.com/Leels/CLUE/master/assets/cards/'
-//             + i.toLowerCase().replace(" ", "-").concat(".jpg"));
-//     });
-//     return playCardsFileNames;
-//
-// }
-
-
 $(document).ready(function() {
     $('#rules').hide();
     $('#player-clues').hide();
@@ -32,24 +16,17 @@ $(document).ready(function() {
         e.preventDefault();
 
         const playerCharacter = $('input[name=character]:checked').val();
-<<<<<<< HEAD
-        let game = new Game(playerCharacter);
-        $('#intro').hide();
-=======
-        game = new Game(playerCharacter);
+        const game = new Game(playerCharacter);
 
         $('#intro-page').hide();
->>>>>>> master
         $('#gameboard').show();
         doTurn(game, 0);
     });
 });
 
 function doTurn(game, i) {
-<<<<<<< HEAD
-=======
     console.log(`${game.suspects[i].name} is taking their turn.`);
->>>>>>> master
+
     const currentPlayer = game.suspects[i];
     const j = (game.suspects[i+1] ? i + 1 : 0);
 
