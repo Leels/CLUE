@@ -17,7 +17,12 @@ export class Suspect {
     }
 
     moveTo(newRoom) {
-        this.location = newRoom;
+        if (newRoom) {
+            this.location = newRoom;
+        } else {
+            this.location = gameVars.rooms[Math.floor(Math.random() * gameVars.rooms.length)];
+        }
+        return this.location;
     }
 
     inquire(whom, guessArr) {

@@ -54,50 +54,15 @@
           </form>
         </div>
       </div>
-      <div id="gameboard">
-        <div class="wrapper">
-          <!-- rooms to hide and show-->
-          <div class="box rooms" id="study">
-            <h2>Study</h2>
-            <div class="clickable">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfju_D-vz2QDlb25gpDYHTD_vk8KbZbPNwwBH8tkJRAJIR3DatLKnitmc&s">
-            </div>
-          </div>
-          <div class="box rooms" id="library">
-            <h2>Library</h2>
-            <div class="clickable">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfju_D-vz2QDlb25gpDYHTD_vk8KbZbPNwwBH8tkJRAJIR3DatLKnitmc&s">
-            </div>
-          </div>
-          <div class="box rooms" id="lounge">
-            <h2>Lounge</h2>
-            <div class="clickable">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfju_D-vz2QDlb25gpDYHTD_vk8KbZbPNwwBH8tkJRAJIR3DatLKnitmc&s">
-            </div>
-          </div>
-          <div class="box rooms" id="billiard-room">
-            <h2>Billiard Room</h2>
-            <div class="clickable">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfju_D-vz2QDlb25gpDYHTD_vk8KbZbPNwwBH8tkJRAJIR3DatLKnitmc&s">
-            </div>
-          </div>
-          <div class="box rooms" id="hall">
-            <h2>Hall</h2>
-            <div class="clickable">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfju_D-vz2QDlb25gpDYHTD_vk8KbZbPNwwBH8tkJRAJIR3DatLKnitmc&s">
-            </div>
-          </div>
-          <div class="box rooms" id="dining-room">
-            <h2>Dining Room</h2>
-            <div class="clickable">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfju_D-vz2QDlb25gpDYHTD_vk8KbZbPNwwBH8tkJRAJIR3DatLKnitmc&s">
-            </div>
-          </div>
-          <div class="box rooms" id="conservatory">
-            <h2>Conservatory</h2>
-            <div class="clickable">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfju_D-vz2QDlb25gpDYHTD_vk8KbZbPNwwBH8tkJRAJIR3DatLKnitmc&s">
-            </div>
+    </div>
+
+    <div id="gameboard">
+      <div class="wrapper container">
+        <!-- rooms to hide and show-->
+        <div class="box" id='room'>
+          <h2>ROOM TEXT</h2>
+          <div id="button-door">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfju_D-vz2QDlb25gpDYHTD_vk8KbZbPNwwBH8tkJRAJIR3DatLKnitmc&s">
           </div>
           <div class="box rooms" id="ballroom">
             <h2>Ballroom</h2>
@@ -177,26 +142,15 @@
         </div>
       </div>
 
-      <div id='player-clues'>
-        <h2>Your Clues:</h2>
-        <div id='player-clues-deck'>
-          <!-- The code between this comment and the one below is just an example of how this will look.  The below HTML should be populated for each player card via javascript UNLESS an image of origonal cards is used, in which case we will simply populate an empty div with a class, id, and style to reflect image dimensions-->
+    <div id='player-clues'>
+      <h2>Your Clues:</h2>
+      <div id='player-clues-deck' class='container'>
 
-          <div id='card1' class='card' style='width: 18rem;'>
-            <img src='https://raw.githubusercontent.com/Leels/CLUE/master/assets/cards/billiard-room.jpg' class='card-img-top' alt='...'>
-          </div>
-          <div id='card2' class='card' style='width: 18rem;'>
-            <img src='https://raw.githubusercontent.com/Leels/CLUE/master/assets/cards/knife.jpg' class='card-img-top' alt='...'>
-          </div>
-          <div id='card3' class='card' style='width: 18rem;'>
-            <img src='https://raw.githubusercontent.com/Leels/CLUE/master/assets/cards/ms.-scarlet.jpg' class='card-img-top' alt='...'>
-          </div>
-          <!--  -->
-          <div class='center-div'>
-            <button class='button-backToGame' type='button'>Proceed to Game</button>
-          </div>
-        </div>
       </div>
+        <div class='center-div'>
+          <button class='button-backToGame' type='button'>Proceed to Game</button>
+        </div>
+    </div>
 
       <div id='accusation'>
         <h2>Make an Accusation</h2>
