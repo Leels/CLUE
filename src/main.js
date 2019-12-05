@@ -4,8 +4,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import  { Game } from './game.js';
 
+function playerCards (playerCharacter, game) {
+    console.log(game);
+    for (let i=0; i<game.suspects.length; i++) {
+        if (game.suspects[i].name === playerCharacter) {
+            return (game.suspects[i].knowledge);
+        }
+    }
+}
+
+
 $(document).ready(function() {
-    let game;
     $('#rules').hide();
     $('#player-clues').hide();
     $('#gameboard').hide();
@@ -17,17 +26,17 @@ $(document).ready(function() {
         e.preventDefault();
 
         const playerCharacter = $('input[name=character]:checked').val();
-        game = new Game(playerCharacter);
+        let game = new Game(playerCharacter);
+
+        console.log(playerCards(playerCharacter, game));
 
         $('#intro').hide();
         $('#gameboard').show();
-        console.log(game.caseFile);
         doTurn(game, 0);
     });
 });
 
 function doTurn(game, i) {
-    console.log(i, game.suspects[i].name);
     const currentPlayer = game.suspects[i];
     const j = (game.suspects[i+1] ? i + 1 : 0);
     if (currentPlayer.isHuman) {
@@ -83,7 +92,7 @@ function rumination(currentPlayer) {
         $('#gameboard').hide();
         $('#player-clues').show();
         currentPlayer.knowledge.forEach((know, i) => {
-            const cardName = know.replace(' ', '-').toLowerCase();
+            // const cardName = know.replace(' ', '-').toLowerCase();
             $(`#card${i+1} img`).attr('src', 'https://raw.githubusercontent.com/Leels/CLUE/master/src/styles/images/cards/room-study.jpg');
         });
         backToGameboard();
@@ -115,7 +124,7 @@ function inquisition(game, currentPlayer, j) {
     });
 }
 
-function accusation(game, currentPlayer, j) {
+function accusation(game, currentPlayer) {
     $('#button-accuse').click(() => {
         $('#gameboard').hide();
         $('#accusation').show();
