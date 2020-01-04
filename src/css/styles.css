@@ -2,7 +2,8 @@
 
 body {
   background-color: #fff7e6;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Righteous', cursive;
+  /* font-family: 'Open Sans', sans-serif; */
 }
 button, select, h1, .radio {
   background-color: white;
@@ -14,8 +15,13 @@ button, select {
   margin: 10px;
 }
 
-h1, h2 {
+h1, h2, #human-player {
   font-family: 'Righteous', cursive;
+}
+
+#human-player {
+  font-family: Gallia;
+  color: #B88846;
 }
 
 h1, h2, h3, h4, h5 {

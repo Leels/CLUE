@@ -1,5 +1,5 @@
 export const gameVars = {
-    guests: ['Mrs. White', 'Mrs. Peacock', 'Mr. Green', 'Prof. Plum', 'Col. Mustard', 'Ms. Scarlet'],
+    guests: ['Mrs. White', 'Mrs. Peacock', 'Mr. Green', 'Prof. Plum', 'Col. Mustard', 'Miss Scarlet'],
     rooms: ['Study', 'Library', 'Lounge', 'Billiard Room', 'Hall', 'Dining Room', 'Conservatory', 'Ballroom', 'Kitchen'],
     weapons: ['Revolver', 'Rope', 'Lead Pipe', 'Knife', 'Candlestick', 'Wrench']
 };

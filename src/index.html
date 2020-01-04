@@ -36,8 +36,8 @@
                 <input type='radio' name='character' value='Col. Mustard'>
             </label>
             <label data-color='red'>
-                <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/cards/ms.-scarlet.jpg" alt="Ms. Scarlet">
-                <input type='radio' name='character' value='Ms. Scarlet'>
+                <img src="https://raw.githubusercontent.com/Leels/CLUE/master/assets/cards/ms.-scarlet.jpg" alt="Miss Scarlet">
+                <input type='radio' name='character' value='Miss Scarlet'>
             </label>
             <button type='submit' id='start-game'>Start Game</button>
         </form>
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="box message-board fancy-border">
-                <h5>You have encountered <span id="current-player-in-room"></span> in the <span id="current-room"></span>. Ask a question to gain a new clue about the murder at Tudor Mansion.</h5>
+                <h5><span id="human-player"></span> <br>you have encountered <span id="current-player-in-room"></span> in the <span id="current-room"></span>. Ask a question to gain a new clue about the murder at Tudor Mansion.</h5>
                 <form id="inquiry-form">
                     <div class="center-div">
                         <h5>Was it...</h5>
@@ -142,7 +142,7 @@
                             <option value='Mr. Green'>Mr. Green</option>
                             <option value='Prof. Plum'>Professor Plum</option>
                             <option value='Col. Mustard'>Colonel Mustard</option>
-                            <option value='Ms. Scarlet'>Miss Scarlet</option>
+                            <option value='Miss Scarlet'>Miss Scarlet</option>
                         </select>
                         <select id='murder-loc' required>
                             <option value="" disabled selected>Location</option>

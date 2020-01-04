@@ -99,7 +99,6 @@ function accusation(game, currentPlayer) {
             e.preventDefault();
 
             const guess = [$('#murderer').val(), $('#murder-loc').val(), $('#murder-wep').val()];
-            // console.log(guess);
             $('#murderer').val('');
             $('#murder-loc').val('');
             $('#murder-wep').val('');
@@ -129,13 +128,14 @@ function backToGameboard() {
     });
 }
 
-function displayRoom(room) {
+function displayRoom(room, game) {
     function randomPlayer() {
-        const players = ['Mrs. White', 'Mrs. Peacock', 'Mr. Green', 'Prof. Plum', 'Col. Mustard', 'Ms. Scarlet'];
+        const players = ['Mrs. White', 'Mrs. Peacock', 'Mr. Green', 'Prof. Plum', 'Col. Mustard', 'Miss Scarlet'];
         return players[Math.floor(Math.random()*6)];
     }
     $('#current-player-in-room').html(randomPlayer());
     $('#current-room').html(room);
     $('#room').removeClass().addClass(room.replace(' ', '-').toLowerCase());
     $('#room h2').text(room);
+    $('#human-player').html(($('input[name=character]:checked').val()) + ",");
 }
